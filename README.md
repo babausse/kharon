@@ -108,9 +108,13 @@ Methods signification are pretty straight-forward as it validates type :
 
 This method will validate any value associated to the given key, it's useful if you just want to pass options like :required or :dependency
 
-#### mongoid
+#### :mongoid
 
 This method is only useful if you use Mongoid or an ORM linking MongoDB to your application. It validates the data associated with the key only if it's a string formatted as a MongoDB unique identifier.
+
+#### :in_array
+
+This method shouldn't be used. Really. It validates the key only if the associated data is in the given array, *not* checking its type. It's recommended to use a type checking method and the ":in" option instead, safer. I shouldn't even make documentation about it. Forget this section, the :in_array method doesn't exist.
 
 ### Options
 
@@ -163,6 +167,22 @@ This option, if not given, is set to TRUE. If given at false, doesn't type cast 
 #### :extract
 
 This option, if not given, is set to TRUE. If given at false, doesn't extract the given key, just validate its type. It can be used with all methods.
+
+#### :floor
+
+The value of round must be a boolean to work properly. If given at TRUE, floor the decimal number identified by this key. This option can be used with the :numeric method.
+
+#### :ceil
+
+The value of round must be a boolean to work properly. If given at TRUE, ceil the decimal number identified by this key. This option can be used with the :numeric method.
+
+#### :round
+
+The value of round must be an integer to work properly. If given, round the decimal number keeping the given number of digits after the comma. This option can be used with the :numeric method.
+
+#### :regex
+
+The value of this option must be passed as a string. If given as a string, verity that the associated string matches the given regular expression. This option can be used with the :text method.
 
 ### Example god damn it !
 
