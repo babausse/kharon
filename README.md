@@ -4,7 +4,13 @@
 
 Charon was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does. It validates a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not.
 
+## Requirements
+
+This gem was developed under Ruby 2.1.0 and needs it to work, compatibility for lower versions of Ruby might be considered soon.
+
 ## Installation
+
+### From Rubygems.org
 
 It's a gem, you know how to install a gem, or you should if you're using it in a ruby application. Okay, let's consider you don't, just type :
 
@@ -13,6 +19,27 @@ gem install charon
 ```
 
 And... That's it ! Now it's installed and you can learn how to properly use it !
+
+### From sources
+
+Clone this repository whenether you want, go inside, then type the following command :
+
+```
+gem install charon-0.0.1
+```
+
+The gem will be installed on your system, from then on you can use it inside your applications.
+
+## Run tests
+
+This gem is tested using RSpec, to run the tests, clone the repository, go in, then type :
+
+```
+% bundle install
+% bundle exec rspec --format documentation --color
+```
+
+It will run all tests in a pretty format. If a test fail, send us an email at : vincent.courtois@mycar-innovations.com.
 
 ## How to use the gem
 

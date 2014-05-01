@@ -87,8 +87,8 @@ module Charon
     # Checks if the given key is a SSID for a MongoDB object or not.
     # @param [Object] key the key about which verify the type.
     # @param [Hash]   options a hash of options passed to this method (see documentation to know which options pass).
-    def mongoid(key, options = {})
-      match?(key, /^[0-9a-fA-F]{24}$/) ? store(key, ->(item){Moped::BSON::ObjectId.new(item.to_s)}, options) : raise_type_error(key, "Moped::BSON::ObjectId")
+    def ssid(key, options = {})
+      match?(key, /^[0-9a-fA-F]{24}$/) ? store(key, ->(item){BSON::ObjectId.from_string(item.to_s)}, options) : raise_type_error(key, "Moped::BSON::ObjectId")
     end
 
     # @!endgroup Public_interface
