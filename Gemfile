@@ -2,8 +2,7 @@ source "https://rubygems.org/"
 ruby   "1.9.3"
 
 gem "aquarium", "0.5.1"
-gem "mongoid" , "4.0.0.beta1"
-gem "pry"
+gem "moped" , "2.0.0.beta6"
 
 # These gems are only used for testing purposes, and shouldn't be used in another environment than the local development one.
 group :tests do

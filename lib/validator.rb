@@ -1,5 +1,3 @@
-require "pry"
-
 module Charon
   # The validator uses aquarium as an AOP DSL to provide "before" and "after" joint point to its main methods.
   # @author Vincent Courtois <vincent.courtois@mycar-innovations.com>
