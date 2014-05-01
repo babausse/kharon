@@ -276,6 +276,48 @@ describe "Validator" do
     context "options" do
       include_examples "options", :numeric
       include_examples "min/max checker", :numeric, :is_a_double, :to_f
+
+      context ":round" do
+        it "rounds the number when the option is passed as an integer" do
+          validator = Kharon::Validator.new({is_a_double: 1.02363265})
+          validator.numeric(:is_a_double, round: 4)
+          expect(validator.filtered).to eq({is_a_double: 1.0236})
+        end
+
+        it "doesn't round the number if passed with another type" do
+          validator = Kharon::Validator.new({is_a_double: "1.02363265"})
+          validator.numeric(:is_a_double, round: "anything here")
+          expect(validator.filtered).to eq({is_a_double: 1.02363265})
+        end
+      end
+
+      context ":floor" do
+        it "floors the number if passed to true" do
+          validator = Kharon::Validator.new(valid_datas)
+          validator.numeric(:is_a_double, floor: true)
+          expect(validator.filtered).to eq({is_a_double: 1000})
+        end
+
+        it "doesn't floor the number if passed to false" do
+          validator = Kharon::Validator.new(valid_datas)
+          validator.numeric(:is_a_double, floor: false)
+          expect(validator.filtered).to eq({is_a_double: 1000.5})
+        end
+      end
+
+      context ":ceil" do
+        it "ceils the number if passed to true" do
+          validator = Kharon::Validator.new(valid_datas)
+          validator.numeric(:is_a_double, ceil: true)
+          expect(validator.filtered).to eq({is_a_double: 1001})
+        end
+
+        it "doesn't ceil the number if passed to false" do
+          validator = Kharon::Validator.new(valid_datas)
+          validator.numeric(:is_a_double, ceil: false)
+          expect(validator.filtered).to eq({is_a_double: 1000.5})
+        end
+      end
     end
   end
 

@@ -3,9 +3,11 @@ GEM
   specs:
     aquarium (0.5.1)
     bson (2.2.2)
+    coderay (1.1.0)
     connection_pool (1.2.0)
     diff-lcs (1.2.5)
     metaclass (0.0.4)
+    method_source (0.8.2)
     mocha (1.0.0)
       metaclass (~> 0.0.1)
     moped (2.0.0.beta6)
@@ -13,6 +15,10 @@ GEM
       connection_pool (~> 1.2)
       optionable (~> 0.2.0)
     optionable (0.2.0)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -28,6 +34,7 @@ GEM
     rspec-mocks (3.0.0.beta2)
       rspec-support (= 3.0.0.beta2)
     rspec-support (3.0.0.beta2)
+    slop (3.4.7)
 
 PLATFORMS
   ruby
@@ -36,6 +43,7 @@ DEPENDENCIES
   aquarium (= 0.5.1)
   mocha (= 1.0.0)
   moped (= 2.0.0.beta6)
+  pry
   rack-test (= 0.6.2)
   rspec (= 3.0.0.beta2)
   rspec-mocks (= 3.0.0.beta2)

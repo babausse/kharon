@@ -2,7 +2,9 @@
 
 ## What is charon ?
 
-Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does. It validates a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not.
+Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does.
+
+It validates the datas in a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not. The datas in the hash are supposed to be strings, Kharon being designed to validate datas coming in a web application from the outside (tipically, datas passed in a querystring or a POST body).
 
 ## Contact me
 

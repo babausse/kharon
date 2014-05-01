@@ -32,7 +32,7 @@ module Kharon
     # @param [Object] key the key about which verify the type.
     # @param [Hash]   options a hash of options passed to this method (see documentation to know which options pass).
     def numeric(key, options = {})
-      match?(key, /\A([+-]?\d+)([,.](\d+))?\Z/) ? store(key, ->(item){item.sub(/,/, ".").to_f}, options) : raise_type_error(key, "Numeric")
+      match?(key, /\A([+-]?\d+)([,.](\d+))?\Z/) ? store(key, ->(item){item.to_s.sub(/,/, ".").to_f}, options) : raise_type_error(key, "Numeric")
     end
 
     # Checks if the given key is a not-empty string or not.
@@ -108,7 +108,7 @@ module Kharon
     end
 
     # After advice checking in numerics if limits are given, and if there are, if they are respected.
-    after calls_to: [:integer, :numeric] do |joint_point, validator, *args|
+    before calls_to: [:integer, :numeric] do |joint_point, validator, *args|
       unless !defined?(args[1]) or args[1].nil? or args[1].empty?
         if(args[1].has_key?(:between))
           validator.check_min_value(args[0], args[1][:between][0])
@@ -116,6 +116,18 @@ module Kharon
         else
           validator.check_min_value(args[0], args[1][:min]) if(args[1].has_key?(:min))
           validator.check_max_value(args[0], args[1][:max]) if(args[1].has_key?(:max))
+        end
+      end
+    end
+
+    after calls_to: [:numeric] do |joint_point, validator, *args|
+      unless !defined?(args[1]) or args[1].nil? or args[1].empty?
+        if(args[1].has_key?(:round) and args[1][:round].kind_of?(Integer))
+          validator.filtered[args[0]] = validator.filtered[args[0]].round(args[1][:round]) if validator.filtered.has_key?(args[0])
+        elsif(args[1].has_key?(:floor) and args[1][:floor] == true)
+          validator.filtered[args[0]] = validator.filtered[args[0]].floor if validator.filtered.has_key?(args[0])
+        elsif(args[1].has_key?(:ceil) and args[1][:ceil] == true)
+          validator.filtered[args[0]] = validator.filtered[args[0]].ceil if validator.filtered.has_key?(args[0])
         end
       end
     end
