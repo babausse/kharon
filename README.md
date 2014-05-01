@@ -15,7 +15,7 @@ This gem was developed under Ruby 2.1.0 and needs it to work, compatibility for 
 It's a gem, you know how to install a gem, or you should if you're using it in a ruby application. Okay, let's consider you don't, just type :
 
 ```
-gem install charon
+gem install kharon
 ```
 
 And... That's it ! Now it's installed and you can learn how to properly use it !
@@ -25,7 +25,7 @@ And... That's it ! Now it's installed and you can learn how to properly use it !
 Clone this repository whenether you want, go inside, then type the following command :
 
 ```
-gem install charon-0.0.1
+gem install kharon-0.0.1
 ```
 
 The gem will be installed on your system, from then on you can use it inside your applications.
