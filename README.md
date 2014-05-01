@@ -1,8 +1,8 @@
-# Charon the boatkeeper
+# Kharon the boatkeeper
 
 ## What is charon ?
 
-Charon was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does. It validates a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not.
+Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does. It validates a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not.
 
 ## Requirements
 
@@ -151,3 +151,11 @@ This option is used to see if an array or a hash situated at the given key conta
 #### :has_keys
 
 This option is used to see if a hash situated at the given key contains some keys. The values must be passed as an array. This option can be used with the :hash and :array methods.
+
+#### :cast
+
+This option, if not given, is set to TRUE. If given at false, doesn't type cast the result of the validation so you keep the original string and just check its type. It can be used with all methods.
+
+#### :extract
+
+This option, if not given, is set to TRUE. If given at false, doesn't extract the given key, just validate its type. It can be used with all methods.

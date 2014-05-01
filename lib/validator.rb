@@ -1,3 +1,5 @@
+require "pry"
+
 module Charon
   # The validator uses aquarium as an AOP DSL to provide "before" and "after" joint point to its main methods.
   # @author Vincent Courtois <vincent.courtois@mycar-innovations.com>
@@ -243,9 +245,11 @@ module Charon
     # @param [Proc]   process a process (lambda) to execute on the initial value. Must contain strictly one argument.
     # @param [Hash]   options the options applied to the initial value. Only the option "rename" is checked and executed here.
     def store(key, process, options = {})
-      if datas.has_key?(key)
-        value = process.call(datas[key])
-        options.has_key?(:rename) ? (@filtered[options[:rename]] = value) : (@filtered[key] = value)
+      unless (options.has_key?(:extract) and options[:extract] == false)
+        if datas.has_key?(key)
+          value = ((options.has_key?(:cast) and options[:cast] == false) ? datas[key] : process.call(datas[key]))
+          options.has_key?(:rename) ? (@filtered[options[:rename]] = value) : (@filtered[key] = value)
+        end
       end
     end
 

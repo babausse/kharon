@@ -91,6 +91,34 @@ shared_examples "options" do |process|
       expect(->{validator.send(process, valid_datas.keys.first, :equals => "anything but the given value")}).to raise_error(ArgumentError)
     end
   end
+
+  context ":extract" do
+    it "etracts the data when given at true" do
+      validator = Charon::Validator.new(valid_datas)
+      validator.send(process, valid_datas.keys.first, :extract => false)
+      expect(validator.filtered).to eq({})
+    end
+
+    it "doesn't extract the data when given at false" do
+      validator = Charon::Validator.new(valid_datas)
+      validator.send(process, valid_datas.keys.first, :extract => true)
+      expect(validator.filtered).to eq(valid_filtered)
+    end
+  end
+
+  context ":cast" do
+    it "casts the data when given at true" do
+      validator = Charon::Validator.new(valid_datas)
+      validator.send(process, valid_datas.keys.first, :cast => true)
+      expect(validator.filtered).to eq(valid_filtered)
+    end
+
+    it "doesn't cast the data when given at false" do
+      validator = Charon::Validator.new(valid_datas)
+      validator.send(process, valid_datas.keys.first, :cast => false)
+      expect(validator.filtered).to eq(valid_datas)
+    end
+  end
 end
 
 shared_examples "type checker" do |type, process|
