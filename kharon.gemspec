@@ -1,9 +1,9 @@
 Gem::Specification.new do |specification|
   specification.name        = "kharon"
-  specification.version     = "0.0.3"
-  specification.date        = "2014-04-01"
+  specification.version     = "0.1.0"
+  specification.date        = "2014-04-02"
   specification.summary     = "Ruby Hash validator"
-  specification.description = "Charon let you pass or not pass depending if you meet the criterias for this... Or not."
+  specification.description = "Kharon is a ruby hash validator that helps you fix the structure of a hash (type of the keys, dependencies, ...)."
   specification.authors     = ["Vincent Courtois"]
   specification.email       = "vincent.courtois@mycar-innovations.com"
   specification.files       = ["lib/validator.rb", "lib/validate.rb"]
