@@ -1,4 +1,4 @@
-module Charon
+module Kharon
   module Helpers
 
     # Validates the datas passed as parameter with a Phenix::Validator and the given instructions.
@@ -6,7 +6,7 @@ module Charon
     # @param  [Proc] the instructions to apply on the validator.
     # @return [Hash] the validated and filtered datas.
     def validate(datas, &block)
-      validator = Phenix::Validator.new(datas)
+      validator = Kharon::Validator.new(datas)
       validator.instance_eval(&block)
       return validator.filtered
     end

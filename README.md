@@ -29,7 +29,7 @@ And... That's it ! Now it's installed and you can learn how to properly use it !
 Clone this repository whenether you want, go inside, then type the following command :
 
 ```
-gem install kharon-0.0.1
+gem install kharon-0.1.0
 ```
 
 The gem will be installed on your system, from then on you can use it inside your applications.
@@ -48,15 +48,15 @@ This gem is tested using RSpec, to run the tests, clone the repository, go in, t
 First, you need to include the gem to your application. Usually you can just do :
 
 ```ruby
-require "charon"
+require "kharon"
 ```
 
 ### The validator
 
-The Charon::Validator class is the main class of this gem, it offers an interface to validate hashes and see if they fulfill requirements. first, you have to create an instance of the validator :
+The Kharon::Validator class is the main class of this gem, it offers an interface to validate hashes and see if they fulfill requirements. first, you have to create an instance of the validator :
 
 ```ruby
-validator = Charon::Validator.new(hash_to_validate)
+validator = Kharon::Validator.new(hash_to_validate)
 ```
 
 Now your validator knows which hash it has to validate, now you can do :
@@ -70,10 +70,10 @@ All the functions are listed in the full documentation below.
 
 ### The helper
 
-This gem was firstly designed to be used as a helper for Sinatra applications, so it contains another useful module : Charon::Helpers. To use it in your Sinatra application, just type this in the controllers where you want it included :
+This gem was firstly designed to be used as a helper for Sinatra applications, so it contains another useful module : Kharon::Helpers. To use it in your Sinatra application, just type this in the controllers where you want it included :
 
 ```ruby
-helpers Charon::Helpers
+helpers Kharon::Helpers
 ```
 
 From there, you can type it in any of the routes of this controller :

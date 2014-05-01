@@ -1,4 +1,4 @@
-module Charon
+module Kharon
   # The validator uses aquarium as an AOP DSL to provide "before" and "after" joint point to its main methods.
   # @author Vincent Courtois <vincent.courtois@mycar-innovations.com>
   class Validator
@@ -146,6 +146,12 @@ module Charon
       end
     end
 
+    after calls_to: [:text] do |joint_point, validator, *args|
+      unless !defined?(args[1]) or args[1].nil? or args[1].empty?
+        validator.match_regex?(args[0], validator.datas[args[0]], args[1][:regex]) if(args[1].has_key?(:regex))
+      end
+    end
+
     # @!endgroup Advices
 
     # Checks if a required key is present in provided datas.
@@ -218,6 +224,11 @@ module Charon
     # @raise [ArgumentError] if the initial value has not each and every one of the given values.
     def contains?(key, values, required_values)
       raise ArgumentError.new("The key #{key} was supposed to contains values [#{required_values.join(", ")}]") if (values & required_values) != required_values
+    end
+
+    def match_regex?(key, value, regex)
+      regex = Regexp.new(regex) if regex.kind_of?(String)
+      raise ArgumentError.new("The key #{key} was supposed to match the regex #{regex} but its value was #{value}") unless regex.match(value)
     end
 
     private
