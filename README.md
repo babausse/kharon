@@ -4,6 +4,10 @@
 
 Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does. It validates a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not.
 
+## Contact me
+
+For any question or advice, contact me at vincent.courtois@mycar-innovations.com. I'll answer as soon as possible, and thank you by advance for giving me some of your time.
+
 ## Requirements
 
 This gem was developed under Ruby 2.1.0 and needs it to work, compatibility for lower versions of Ruby might be considered soon.
@@ -38,8 +42,6 @@ This gem is tested using RSpec, to run the tests, clone the repository, go in, t
 % bundle install
 % bundle exec rspec --format documentation --color
 ```
-
-It will run all tests in a pretty format. If a test fail, send us an email at : vincent.courtois@mycar-innovations.com.
 
 ## How to use the gem
 
@@ -159,3 +161,17 @@ This option, if not given, is set to TRUE. If given at false, doesn't type cast 
 #### :extract
 
 This option, if not given, is set to TRUE. If given at false, doesn't extract the given key, just validate its type. It can be used with all methods.
+
+### Example god damn it !
+
+Here is an example to demonstrate the power of Kharon (made with the helper) :
+
+```ruby
+@validated = validate(parameters) do
+  numeric  "price", required: true, min: 0
+  datetime "added"
+  text     "added_by", dependency: "added"
+end
+```
+
+This example could validate the datas coming in the application in a search engine route for products in a supermarket.
