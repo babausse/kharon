@@ -10,7 +10,7 @@ For any question or advice, contact me at vincent.courtois@mycar-innovations.com
 
 ## Requirements
 
-This gem was developed under Ruby 2.1.0 and needs it to work, compatibility for lower versions of Ruby might be considered soon.
+You'll just need Ruby 1.9.3 at least to make it work.
 
 ## Installation
 

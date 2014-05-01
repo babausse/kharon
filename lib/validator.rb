@@ -76,7 +76,7 @@ module Charon
     # @param [Object] key the key about which verify the type.
     # @param [Hash]   options a hash of options passed to this method (see documentation to know which options pass).
     def hash(key, options = {})
-      is_typed?(key, Hash) ? store(key, ->(item){item.to_h}, options) : raise_type_error(key, "Hash")
+      is_typed?(key, Hash) ? store(key, ->(item){Hash.try_convert(item)}, options) : raise_type_error(key, "Hash")
     end
 
     # Checks if the given key is a boolean or not.
