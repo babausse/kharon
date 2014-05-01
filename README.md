@@ -1,6 +1,6 @@
 # Kharon the boatkeeper
 
-## What is charon ?
+## What is kharon ?
 
 Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does.
 
