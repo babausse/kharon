@@ -1,6 +1,4 @@
-require 'rack/test'
-require 'moped'
-require './lib/validator_factory.rb'
+require 'spec_helper'
 
 describe "Kharon::Factory" do
 

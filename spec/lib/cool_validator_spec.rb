@@ -1,6 +1,4 @@
-require 'rack/test'
-require 'moped'
-require './lib/cool_validator.rb'
+require 'spec_helper'
 
 describe "CoolValidator" do
   context "handling errors" do
