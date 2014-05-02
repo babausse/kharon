@@ -123,10 +123,6 @@ This method will validate any value associated to the given key, it's useful if 
 
 This method is only useful if you use Mongoid or an ORM linking MongoDB to your application. It validates the data associated with the key only if it's a string formatted as a MongoDB unique identifier.
 
-#### :in_array
-
-This method shouldn't be used. Really. It validates the key only if the associated data is in the given array, *not* checking its type. It's recommended to use a type checking method and the ":in" option instead, safer. I shouldn't even make documentation about it. Forget this section, the :in_array method doesn't exist.
-
 ### Options
 
 #### :required
