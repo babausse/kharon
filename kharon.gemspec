@@ -9,9 +9,7 @@ Gem::Specification.new do |specification|
   specification.files       = ["lib/validator.rb", "lib/validate.rb"]
   specification.homepage    = "https://rubygems.org/gems/kharon"
   specification.license     = "Apache License 2"
-  specification.test_files  = ["spec/spec_helper.rb", "spec/lib/validator_spec.rb"]
+  specification.test_files  = ["spec/lib/validator_spec.rb"]
 
   specification.required_ruby_version = ">= 1.9.3"
-  
-  specification.add_runtime_dependency "aquarium", ["= 0.5.1"]
 end

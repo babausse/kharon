@@ -1,4 +1,5 @@
-require 'spec_helper'
+require 'rack/test'
+require 'moped'
 require './lib/validator.rb'
 
 shared_examples "options" do |process|
