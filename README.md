@@ -31,7 +31,7 @@ And... That's it ! Now it's installed and you can learn how to properly use it !
 Clone this repository whenether you want, go inside, then type the following command :
 
 ```
-gem install kharon-0.1.0
+gem install kharon-0.2.0
 ```
 
 The gem will be installed on your system, from then on you can use it inside your applications.
