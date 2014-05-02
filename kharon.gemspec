@@ -1,6 +1,6 @@
 Gem::Specification.new do |specification|
   specification.name        = "kharon"
-  specification.version     = "0.2.0"
+  specification.version     = "0.3.0"
   specification.date        = "2014-04-02"
   specification.summary     = "Ruby Hash validator"
   specification.description = "Kharon is a ruby hash validator that helps you fix the structure of a hash (type of the keys, dependencies, ...)."
