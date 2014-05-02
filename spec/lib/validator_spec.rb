@@ -1,6 +1,4 @@
-require 'rack/test'
-require 'moped'
-require './lib/validator.rb'
+require 'spec_helper'
 
 shared_examples "options" do |process|
   context ":rename" do

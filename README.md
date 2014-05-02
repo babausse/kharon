@@ -1,6 +1,6 @@
 # Kharon the boatkeeper
 
-## What is charon ?
+## What is kharon ?
 
 Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn't pass, and it's exactly what this gem does.
 
@@ -122,10 +122,6 @@ This method will validate any value associated to the given key, it's useful if 
 #### :mongoid
 
 This method is only useful if you use Mongoid or an ORM linking MongoDB to your application. It validates the data associated with the key only if it's a string formatted as a MongoDB unique identifier.
-
-#### :in_array
-
-This method shouldn't be used. Really. It validates the key only if the associated data is in the given array, *not* checking its type. It's recommended to use a type checking method and the ":in" option instead, safer. I shouldn't even make documentation about it. Forget this section, the :in_array method doesn't exist.
 
 ### Options
 
