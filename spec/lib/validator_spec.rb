@@ -507,6 +507,26 @@ describe "Validator" do
       expect(->{validator.box(:is_not_a_box)}).to raise_error(ArgumentError)
     end
 
+    it "fails with an invalid top longitude" do
+      validator = Kharon::Validator.new(is_an_invalid_box: "test,12,12.0,-12.0")
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+    end
+
+    it "fails with an invalid top latitude" do
+      validator = Kharon::Validator.new(is_an_invalid_box: "0,test,12.0,-12.0")
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+    end
+
+    it "fails with an invalid down longitude" do
+      validator = Kharon::Validator.new(is_an_invalid_box: "0,12,test,-12.0")
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+    end
+
+    it "fails with an invalid down latitude" do
+      validator = Kharon::Validator.new(is_an_invalid_box: "0,12,12.0,test")
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+    end
+
     context "options" do
       include_examples "options", :box
 
