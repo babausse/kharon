@@ -31,10 +31,21 @@ And... That's it ! Now it's installed and you can learn how to properly use it !
 Clone this repository whenether you want, go inside, then type the following command :
 
 ```
-gem install kharon-0.1.0
+gem install kharon-0.3.0
 ```
 
 The gem will be installed on your system, from then on you can use it inside your applications.
+
+## Configuration
+
+The configuration of the module is simple, juste use the #configure method from the Kharon::Factory module as follow :
+
+```ruby
+Kharon::Factory.configure do |configuration|
+  # Decides whether you want to use exceptions or not. Default is TRUE.
+  configuration.use_exceptions(true)
+end
+```
 
 ## Run tests
 
@@ -58,7 +69,7 @@ require "kharon"
 The Kharon::Validator class is the main class of this gem, it offers an interface to validate hashes and see if they fulfill requirements. first, you have to create an instance of the validator :
 
 ```ruby
-validator = Kharon::Validator.new(hash_to_validate)
+validator = Kharon::Factory.validator(hash_to_validate)
 ```
 
 Now your validator knows which hash it has to validate, now you can do :
