@@ -544,4 +544,25 @@ describe "Validator" do
     end
   end
 
+  context "email" do
+    let(:valid_datas)    { {is_an_email: "vincent.courtois@mycar-innovations.com"} }
+    let(:valid_filtered) { valid_datas }
+    let(:invalid_datas)  { {is_not_an_email: "anything else"} }
+
+    it "succeeds when given a valid email" do
+      validator = Kharon::Validator.new(valid_datas)
+      validator.email(:is_an_email)
+      expect(validator.filtered).to eq(valid_filtered)
+    end
+
+    it "fails when not given a email" do
+      validator = Kharon::Validator.new(invalid_datas)
+      expect(->{validator.email(:is_not_an_email)}).to raise_error(ArgumentError)
+    end
+
+    context "options" do
+      include_examples "options", :email
+    end
+  end
+
 end

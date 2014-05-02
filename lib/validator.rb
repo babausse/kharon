@@ -131,6 +131,16 @@ module Kharon
       match?(key, /^(?:[+-]?\d{1,3}(?:\.\d{1,7})?,?){4}$/) ? store_box(key, options) : raise_type_error(key, "Box")
     end
 
+    # Checks if the given key is an email or not.
+    # @param [Object] key the key about which verify the type.
+    # @param [Hash]   options a hash of options passed to this method (see documentation to know which options pass).
+    # @example Validates a key so it has to be an email.
+    #   @validator.email(:email)
+    def email(key, options = {})
+      before_all(key, options)
+      match?(key, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) ? store(key, ->(item){item}, options) : raise_type_error(key, "Email")
+    end
+
     private
 
     # This method is executed before any call to a public method.
