@@ -1,4 +1,5 @@
 module Kharon
+
   # The validator is the main class of Kharon, it validates a hash given a structure.
   # @author Vincent Courtois <vincent.courtois@mycar-innovations.com>
   class Validator
@@ -120,6 +121,16 @@ module Kharon
       match?(key, /^[0-9a-fA-F]{24}$/) ? store(key, ->(item){BSON::ObjectId.from_string(item.to_s)}, options) : raise_type_error(key, "Moped::BSON::ObjectId")
     end
 
+    # Checks if the given key is a box (geofences) or not. A box is composed of four numbers (positive or negative, decimal or not) separed by commas.
+    # @param [Object] key the key about which verify the type.
+    # @param [Hash]   options a hash of options passed to this method (see documentation to know which options pass).
+    # @example Validates a key so it has to be a box.
+    #   @validator.box(:a_box)
+    def box(key, options = {})
+      before_all(key, options)
+      match?(key, /^(?:[+-]?\d{1,3}(?:\.\d{1,7})?,?){4}$/) ? store_box(key, options) : raise_type_error(key, "Box")
+    end
+
     private
 
     # This method is executed before any call to a public method.
@@ -190,6 +201,16 @@ module Kharon
     def store_text(key, process, options)
       match_regex?(key, datas[key], options[:regex]) if(options.has_key?(:regex))
       store(key, process, options)
+    end
+
+    def store_box(key, options)
+      if(options.has_key?(:at_least))
+        box_contains?(datas[key], options[:at_least])
+      end
+      if(options.has_key?(:at_most))
+        box_contains?(options[:at_most], datas[key])
+      end
+      store(key, ->(item){parse_box(datas[key])}, options)
     end
 
     # Checks if a required key is present in provided datas.
@@ -310,6 +331,32 @@ module Kharon
       end
     end
 
+    # Parses a box given as a string of four numbers separated by commas.
+    # @param [String] box the string representing the box.
+    # @return [Array] an array of size 2, containing two arrays of size 2 (the first being the coordinates of the top-left corner, the second the ones of the bottom-right corner)
+    def parse_box(box)
+      if box.kind_of?(String)
+        begin
+          raw_box = box.split(",").map(&:to_f)
+          box = [[raw_box[0], raw_box[1]], [raw_box[2], raw_box[3]]]
+        rescue
+          raise_error("The box was not correctly formatted")
+        end
+      end
+      return box
+    end
+
+    # Verify if a box contains another box.
+    # @param [Object] container any object that can be treated as a box, container of the other box
+    # @param [Object] contained any object that can be treated as a box, contained in the other box
+    # @return [Boolean] TRUE if the box is contained in the other one, FALSE if not.
+    def box_contains?(container, contained)
+      container = parse_box(container)
+      contained = parse_box(contained)
+      result = ((container[0][0] <= contained[0][0]) and (container[0][1] <= container[0][1]) and (container[1][0] >= container[1][0]) and (container[1][1] >= container[1][1]))
+      raise_error("The box #{contained} was supposed to be contained in #{container}") unless result
+    end
+
     # Raises a type error with a generic message.
     # @param [Object] key the key associated from the value triggering the error.
     # @param [Class]  type the expected type, not respected by the initial value.
@@ -320,6 +367,9 @@ module Kharon
 
     protected
 
+    # Raises an error giving a message to display.
+    # @param [String] message the the message to display with the exception.
+    # @raises ArgumentError an error to stop the execution when this method is invoked.
     def raise_error(message)
       raise ArgumentError.new(message)
     end

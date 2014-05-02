@@ -490,4 +490,58 @@ describe "Validator" do
     end
   end
 
+  context "box" do
+    let(:valid_datas)    { {is_a_box: "-2,-2.0,100,100.0"} }
+    let(:valid_filtered) { {is_a_box: [[-2, -2], [100, 100]]} }
+    let(:invalid_datas)  { {is_not_a_box: "anything else"} }
+
+    before do
+      @validator = Kharon::Validator.new(valid_datas)
+    end
+
+    it "succeeds when given a valid box" do
+      @validator.box(:is_a_box)
+      expect(@validator.filtered).to eq(valid_filtered)
+    end
+
+    it "fails when not given a box" do
+      validator = Kharon::Validator.new(invalid_datas)
+      expect(->{validator.box(:is_not_a_box)}).to raise_error(ArgumentError)
+    end
+
+    context "options" do
+      include_examples "options", :box
+
+      context ":at_least" do
+
+        it "succeeds if the box is bigger than the one given with the at_least option" do
+          expect(->{@validator.box(:is_a_box, at_least: [[10, 10], [20, 20]])}).to_not raise_error
+        end
+
+        it "succeeds if the box is equal than the one given with the at_least option" do
+          expect(->{@validator.box(:is_a_box, at_least: [[-2, -2], [100, 100]])}).to_not raise_error
+        end
+
+        it "fails if the box is smaller than the one given with the at_least option" do
+          expect(->{@validator.box(:is_a_box, at_least: [[-20, -20], [1000, 1000]])}).to raise_error(ArgumentError)
+        end
+      end
+
+      context "at_most" do
+
+        it "succeeds if the box is smaller than the one given with the at_most option" do
+          expect(->{@validator.box(:is_a_box, at_most: [[-20, -20], [1000, 1000]])}).to_not raise_error
+        end
+
+        it "succeeds if the box is equal than the one given with the at_most option" do
+          expect(->{@validator.box(:is_a_box, at_most: [[-2, -2], [100, 100]])}).to_not raise_error
+        end
+
+        it "fails if the box is bigger than the one given with the at_most option" do
+          expect(->{@validator.box(:is_a_box, at_most: [[10, 10], [20, 20]])}).to raise_error(ArgumentError)
+        end
+      end
+    end
+  end
+
 end
