@@ -26,6 +26,20 @@ gem install kharon
 
 And... That's it ! Now it's installed and you can learn how to properly use it !
 
+### With bundler
+
+Add it to your Gemfile :
+
+```
+gem "kharon", "~> 0.4.0"
+```
+
+then run the following command :
+
+```
+bundle install
+```
+
 ### From sources
 
 Clone this repository whenether you want, go inside, then type the following command :
