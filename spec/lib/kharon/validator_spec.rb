@@ -10,7 +10,7 @@ shared_examples "options" do |process|
 
     it "correctly doesn't rename a key when the value is invalid" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.send(process, invalid_datas.keys.first, rename: :another_name)}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, invalid_datas.keys.first, rename: :another_name)}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -23,7 +23,7 @@ shared_examples "options" do |process|
 
     it "fails when a dependency is not respected" do
       validator = Kharon::Validator.new(valid_datas)
-      expect(->{validator.send(process, valid_datas.keys.first, dependency: :another_key_not_existing)}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, valid_datas.keys.first, dependency: :another_key_not_existing)}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -36,7 +36,7 @@ shared_examples "options" do |process|
 
     it "fails when one of the dependencies is not respected" do
       validator = Kharon::Validator.new(valid_datas.merge({dep1: "anything"}))
-      expect(->{validator.send(process, valid_datas.keys.first, dependencies: [:dep1, :dep2])}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, valid_datas.keys.first, dependencies: [:dep1, :dep2])}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -55,7 +55,7 @@ shared_examples "options" do |process|
 
     it "fails when a required key is not given" do
       validator = Kharon::Validator.new(valid_datas)
-      expect(->{validator.send(process, :not_in_hash, required: true)}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, :not_in_hash, required: true)}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -74,7 +74,7 @@ shared_examples "options" do |process|
 
     it "fails if the value is not in the possible values" do
       validator = Kharon::Validator.new(valid_datas)
-      expect(->{validator.send(process, valid_datas.keys.first, :in => ["anything but the value", "another impossible thing"])}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, valid_datas.keys.first, :in => ["anything but the value", "another impossible thing"])}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -87,7 +87,7 @@ shared_examples "options" do |process|
 
     it "fails if the value is not equal to the given value" do
       validator = Kharon::Validator.new(valid_datas)
-      expect(->{validator.send(process, valid_datas.keys.first, :equals => "anything but the given value")}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, valid_datas.keys.first, :equals => "anything but the given value")}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -129,7 +129,7 @@ shared_examples "type checker" do |type, process|
 
   it "fails when given something else than an instance of #{type}" do
     validator = Kharon::Validator.new(invalid_datas)
-    expect(->{validator.send(process, invalid_datas.keys.first)}).to raise_error(ArgumentError)
+    expect(->{validator.send(process, invalid_datas.keys.first)}).to raise_error(Kharon::Errors::Validation)
   end
 end
 
@@ -149,7 +149,7 @@ shared_examples "min/max checker" do |process, key, transformation|
     end
 
     it "fails when a min option is given, but not respected" do
-      expect(->{validator.send(process, key, {min: value+1})}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, key, {min: value+1})}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -165,7 +165,7 @@ shared_examples "min/max checker" do |process, key, transformation|
     end
 
     it "fails when a max option is given, but not respected" do
-      expect(->{validator.send(process, key, {max: value-1})}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, key, {max: value-1})}).to raise_error(Kharon::Errors::Validation)
     end
   end
 
@@ -177,11 +177,11 @@ shared_examples "min/max checker" do |process, key, transformation|
     end
 
     it "fails when a max between option is given, but the value is strictly lesser" do
-      expect(->{validator.send(process, key, {between: [value+1, value+2]})}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, key, {between: [value+1, value+2]})}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails when a max between option is given, but the value is strictly greater" do
-      expect(->{validator.send(process, key, {between: [value-2, value-1]})}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, key, {between: [value-2, value-1]})}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails when a max between option is given, but the value is equal to the inferior limit" do
@@ -206,12 +206,12 @@ shared_examples "contains option" do |process, key|
 
     it "fails if only some values are contained" do
       validator = Kharon::Validator.new(valid_datas)
-      expect(->{validator.send(process, key, contains: ["val1", "val3"])}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, key, contains: ["val1", "val3"])}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails if none of the values are contained" do
       validator = Kharon::Validator.new(valid_datas)
-      expect(->{validator.send(process, key, contains: ["val3", "val4"])}).to raise_error(ArgumentError)
+      expect(->{validator.send(process, key, contains: ["val3", "val4"])}).to raise_error(Kharon::Errors::Validation)
     end
   end
 end
@@ -230,12 +230,12 @@ describe "Validator" do
 
     it "fails when given a float" do
       validator = Kharon::Validator.new({is_not_an_integer: 1000.5})
-      expect(->{validator.integer(:is_not_an_integer)}).to raise_error(ArgumentError)
+      expect(->{validator.integer(:is_not_an_integer)}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails when not given a numeric" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.integer(:is_not_an_integer)}).to raise_error(ArgumentError)
+      expect(->{validator.integer(:is_not_an_integer)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -269,7 +269,7 @@ describe "Validator" do
 
     it "fails when not given a numeric" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.integer(:is_not_a_numeric)}).to raise_error(ArgumentError)
+      expect(->{validator.integer(:is_not_a_numeric)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -339,7 +339,7 @@ describe "Validator" do
 
         it "fails when the regular expression is not respected" do
           validator = Kharon::Validator.new(valid_datas)
-          expect(->{validator.text(:is_a_string, regex: "anything else")}).to raise_error(ArgumentError)
+          expect(->{validator.text(:is_a_string, regex: "anything else")}).to raise_error(Kharon::Errors::Validation)
         end
       end
     end
@@ -365,7 +365,7 @@ describe "Validator" do
 
     it "fails when given something else than a valid datetime" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.datetime(:is_not_a_datetime)}).to raise_error(ArgumentError)
+      expect(->{validator.datetime(:is_not_a_datetime)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -393,7 +393,7 @@ describe "Validator" do
 
     it "fails when given something else than a valid date" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.date(:is_not_a_date)}).to raise_error(ArgumentError)
+      expect(->{validator.date(:is_not_a_date)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -434,12 +434,12 @@ describe "Validator" do
 
         it "fails if not all keys are given in the hash" do
           validator = Kharon::Validator.new(valid_datas)
-          expect(->{validator.hash(:is_a_hash, has_keys: [:key1, :key3])}).to raise_error(ArgumentError)
+          expect(->{validator.hash(:is_a_hash, has_keys: [:key1, :key3])}).to raise_error(Kharon::Errors::Validation)
         end
 
         it "fails if no keys are contained in the hash" do
           validator = Kharon::Validator.new(valid_datas)
-          expect(->{validator.hash(:is_a_hash, has_keys: [:key3, :key4])}).to raise_error(ArgumentError)
+          expect(->{validator.hash(:is_a_hash, has_keys: [:key3, :key4])}).to raise_error(Kharon::Errors::Validation)
         end
       end
     end
@@ -458,7 +458,7 @@ describe "Validator" do
 
     it "fails when not given a boolean" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.boolean(:is_not_a_boolean)}).to raise_error(ArgumentError)
+      expect(->{validator.boolean(:is_not_a_boolean)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -480,7 +480,7 @@ describe "Validator" do
 
     it "fails when not given a SSID" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.ssid(:is_not_a_ssid)}).to raise_error(ArgumentError)
+      expect(->{validator.ssid(:is_not_a_ssid)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -504,27 +504,27 @@ describe "Validator" do
 
     it "fails when not given a box" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.box(:is_not_a_box)}).to raise_error(ArgumentError)
+      expect(->{validator.box(:is_not_a_box)}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails with an invalid top longitude" do
       validator = Kharon::Validator.new(is_an_invalid_box: "test,12,12.0,-12.0")
-      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails with an invalid top latitude" do
       validator = Kharon::Validator.new(is_an_invalid_box: "0,test,12.0,-12.0")
-      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails with an invalid down longitude" do
       validator = Kharon::Validator.new(is_an_invalid_box: "0,12,test,-12.0")
-      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(Kharon::Errors::Validation)
     end
 
     it "fails with an invalid down latitude" do
       validator = Kharon::Validator.new(is_an_invalid_box: "0,12,12.0,test")
-      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(ArgumentError)
+      expect(->{validator.box(:is_an_invalid_box)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do
@@ -541,7 +541,7 @@ describe "Validator" do
         end
 
         it "fails if the box is smaller than the one given with the at_least option" do
-          expect(->{@validator.box(:is_a_box, at_least: [[-20, -20], [1000, 1000]])}).to raise_error(ArgumentError)
+          expect(->{@validator.box(:is_a_box, at_least: [[-20, -20], [1000, 1000]])}).to raise_error(Kharon::Errors::Validation)
         end
       end
 
@@ -556,7 +556,7 @@ describe "Validator" do
         end
 
         it "fails if the box is bigger than the one given with the at_most option" do
-          expect(->{@validator.box(:is_a_box, at_most: [[10, 10], [20, 20]])}).to raise_error(ArgumentError)
+          expect(->{@validator.box(:is_a_box, at_most: [[10, 10], [20, 20]])}).to raise_error(Kharon::Errors::Validation)
         end
       end
     end
@@ -575,7 +575,7 @@ describe "Validator" do
 
     it "fails when not given a email" do
       validator = Kharon::Validator.new(invalid_datas)
-      expect(->{validator.email(:is_not_an_email)}).to raise_error(ArgumentError)
+      expect(->{validator.email(:is_not_an_email)}).to raise_error(Kharon::Errors::Validation)
     end
 
     context "options" do

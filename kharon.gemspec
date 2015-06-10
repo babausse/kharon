@@ -10,7 +10,7 @@ Gem::Specification.new do |specification|
   specification.summary     = "Ruby Hash validator"
   specification.description = "Kharon is a ruby hash validator that helps you fix the structure of a hash (type of the keys, dependencies, ...)."
   specification.authors     = ["Vincent Courtois"]
-  specification.email       = "vincent.courtois@mycar-innovations.com"
+  specification.email       = "courtois.vincent@outlook.com"
   specification.files       = `git ls-files`.split($/)
   specification.homepage    = "https://rubygems.org/gems/kharon"
   specification.license     = "Apache License 2"

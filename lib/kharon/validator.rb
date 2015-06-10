@@ -1,16 +1,20 @@
 module Kharon
 
   # The validator is the main class of Kharon, it validates a hash given a structure.
-  # @author Vincent Courtois <vincent.courtois@mycar-innovations.com>
+  # @author Vincent Courtois <courtois.vincent@outlook.com>
   class Validator
 
     # @!attribute [r] datas
-      # @return The datas to filter, they shouldn't be modified to guarantee their integrity.
+      # @return [Hash] The datas to filter, they shouldn't be modified to guarantee their integrity.
     attr_reader :datas
 
     # @!attribute [rw] filtered
-      # @return The filtered datas are the datas after they have been filtered (renamed keys for example) by the validator.
+      # @return [Hash] The filtered datas are the datas after they have been filtered (renamed keys for example) by the validator.
     attr_accessor :filtered
+
+    # @!attribute [rw] handler
+      # @return [Object] the error handler given to this instance of the validator.
+    attr_accessor :handler
 
     # Constructor of the classe, receiving the datas to validate and filter.
     # @param [Hash] datas the datas to validate in the validator.
@@ -19,6 +23,7 @@ module Kharon
     def initialize(datas)
       @datas    = datas
       @filtered = Hash.new
+      @handler  = Kharon.errors_handler
     end
 
     # Checks if the given key is an integer or not.
@@ -215,19 +220,19 @@ module Kharon
 
     def store_box(key, options)
       if(options.has_key?(:at_least))
-        box_contains?(datas[key], options[:at_least])
+        box_contains?(key, datas[key], options[:at_least])
       end
       if(options.has_key?(:at_most))
-        box_contains?(options[:at_most], datas[key])
+        box_contains?(key, options[:at_most], datas[key])
       end
-      store(key, ->(item){parse_box(datas[key])}, options)
+      store(key, ->(item){parse_box(key, datas[key])}, options)
     end
 
     # Checks if a required key is present in provided datas.
     # @param [Object] key the key of which check the presence.
     # @raise [ArgumentError] if the key is not present.
     def required(key)
-      raise_error("The key #{key} is required and not provided.") unless @datas.has_key?(key)
+      raise_error(type: "required", key: key) unless @datas.has_key?(key)
     end
 
     # Syntaxic sugar used to chack several dependencies at once.
@@ -244,7 +249,7 @@ module Kharon
     # @param [Object] dependency the key needed by another key for it to properly work.
     # @raise [ArgumentError] if the required dependency is not present.
     def dependency(key, dependency)
-      raise_error("The key #{key} needs the key #{dependency} but it was not provided.") unless @datas.has_key?(dependency)
+      raise_error(type: "dependency", key: "key", needed: dependency) unless @datas.has_key?(dependency)
     end
 
     # Checks if the value associated with the given key is greater than the given minimum value.
@@ -252,7 +257,7 @@ module Kharon
     # @param [Numeric] min_value the required minimum value.
     # @raise [ArgumentError] if the initial value is strictly lesser than the minimum value.
     def check_min_value(key, min_value)
-      raise_error("The key #{key} was supposed to be greater or equal than #{min_value}, the value was #{datas[key]}") unless datas[key].to_i >= min_value.to_i
+      raise_error(type: "min", supposed: min_value, key: key, value: datas[key]) unless datas[key].to_i >= min_value.to_i
     end
 
     # Checks if the value associated with the given key is lesser than the given maximum value.
@@ -260,7 +265,7 @@ module Kharon
     # @param [Numeric] max_value the required maximum value.
     # @raise [ArgumentError] if the initial value is strictly greater than the minimum value.
     def check_max_value(key, max_value)
-      raise_error("The key #{key} was supposed to be lesser or equal than #{max_value}, the value was #{datas[key]}") unless datas[key].to_i <= max_value.to_i
+      raise_error(type: "max", supposed: max_value, key: key, value: datas[key]) unless datas[key].to_i <= max_value.to_i
     end
 
     # Checks if the value associated with the given key is included in the given array of values.
@@ -268,7 +273,7 @@ module Kharon
     # @param [Array]  values the values in which the initial value should be contained.
     # @raise [ArgumentError] if the initial value is not included in the given possible values.
     def in_array?(key, values)
-      raise_error("The key #{key} was supposed to be in [#{values.join(", ")}], the value was #{datas[key]}") unless (values.empty? or values.include?(datas[key]))
+      raise_error(type: "array.in", key: key, supposed: values, value: datas[key]) unless (values.empty? or values.include?(datas[key]))
     end
 
     # Checks if the value associated with the given key is equal to the given value.
@@ -276,7 +281,7 @@ module Kharon
     # @param [Object] value the values with which the initial value should be compared.
     # @raise [ArgumentError] if the initial value is not equal to the given value.
     def equals_to?(key, value)
-      raise_error("The key #{key} was supposed to equal than #{value}, the value was #{datas[key]}") unless datas[key] == value
+      raise_error(type: "equals", key: key, supposed: value, found: datas[key]) unless datas[key] == value
     end
 
     # Checks if the value associated with the given key has the given required keys.
@@ -284,7 +289,7 @@ module Kharon
     # @param [Array]  required_keys the keys that the initial Hash typed value should contain.
     # @raise [ArgumentError] if the initial value has not each and every one of the given keys.
     def has_keys?(key, required_keys)
-      raise_error("The key #{key} was supposed to contains keys [#{required_keys.join(", ")}]") if (datas[key].keys & required_keys) != required_keys
+      raise_error(type: "contains.keys", required: required_keys, key: key) if (datas[key].keys & required_keys) != required_keys
     end
 
     # Checks if the value associated with the given key has the given required values.
@@ -292,12 +297,12 @@ module Kharon
     # @param [Array]  required_keys the values that the initial Enumerable typed value should contain.
     # @raise [ArgumentError] if the initial value has not each and every one of the given values.
     def contains?(key, values, required_values)
-      raise_error("The key #{key} was supposed to contains values [#{required_values.join(", ")}]") if (values & required_values) != required_values
+      raise_error(type: "contains.values", required: required_values, key: key) if (values & required_values) != required_values
     end
 
     def match_regex?(key, value, regex)
       regex = Regexp.new(regex) if regex.kind_of?(String)
-      raise_error("The key #{key} was supposed to match the regex #{regex} but its value was #{value}") unless regex.match(value)
+      raise_error(type: "regex", regex: regex, value: value, key: key) unless regex.match(value)
     end
 
     # Check if the value associated with the given key matches the given regular expression.
@@ -344,13 +349,13 @@ module Kharon
     # Parses a box given as a string of four numbers separated by commas.
     # @param [String] box the string representing the box.
     # @return [Array] an array of size 2, containing two arrays of size 2 (the first being the coordinates of the top-left corner, the second the ones of the bottom-right corner)
-    def parse_box(box)
+    def parse_box(key, box)
       if box.kind_of?(String)
         begin
           raw_box = box.split(",").map(&:to_f)
           box = [[raw_box[0], raw_box[1]], [raw_box[2], raw_box[3]]]
         rescue
-          raise_error("The box was not correctly formatted")
+          raise_error(type: "box.format", key: "key", value: box)
         end
       end
       return box
@@ -360,11 +365,11 @@ module Kharon
     # @param [Object] container any object that can be treated as a box, container of the other box
     # @param [Object] contained any object that can be treated as a box, contained in the other box
     # @return [Boolean] TRUE if the box is contained in the other one, FALSE if not.
-    def box_contains?(container, contained)
-      container = parse_box(container)
-      contained = parse_box(contained)
+    def box_contains?(key, container, contained)
+      container = parse_box(key, container)
+      contained = parse_box(key, contained)
       result = ((container[0][0] <= contained[0][0]) and (container[0][1] <= container[0][1]) and (container[1][0] >= container[1][0]) and (container[1][1] >= container[1][1]))
-      raise_error("The box #{contained} was supposed to be contained in #{container}") unless result
+      raise_error(type: "box.containment", contained: contained, container: container, key: key) unless result
     end
 
     # Raises a type error with a generic message.
@@ -372,7 +377,7 @@ module Kharon
     # @param [Class]  type the expected type, not respected by the initial value.
     # @raise [ArgumentError] the chosen type error.
     def raise_type_error(key, type)
-      raise_error("The key {key} was supposed to be an instance of #{type}, #{key.class} found.")
+      raise_error(type: "type", key: key, supposed: type, found: key.class)
     end
 
     protected
@@ -381,7 +386,13 @@ module Kharon
     # @param [String] message the the message to display with the exception.
     # @raises ArgumentError an error to stop the execution when this method is invoked.
     def raise_error(message)
-      raise ArgumentError.new(message)
+      handler.report_error(message)
+    end
+
+    # Accessor for the errors, use only if the handler is a Kharon::Handlers::Messages.
+    # @return [Array] the errors encountered during validation or an empty array if the handler was a Kharon::Handlers::Exceptions.
+    def errors
+      handler.respond_to?(:errors) ? handler.errors : []
     end
 
   end
