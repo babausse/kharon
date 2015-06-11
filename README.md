@@ -70,7 +70,7 @@ This gem is tested using RSpec, to run the tests, clone the repository, go in, t
 
 ```
 % bundle install
-% bundle exec rspec --format documentation --color
+% bundle exec rspec
 ```
 
 ## How to use the gem
