@@ -130,69 +130,6 @@
 
 
 
-  <h2>Instance Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
-  <ul class="summary">
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#errors-instance_method" title="#errors (instance method)">- (Object) <strong>errors</strong> </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Returns the value of attribute errors.</p>
-</div></span>
-  
-</li>
-
-    
-      <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="#errors+the+errors+stored+if+encountered+during+validation+process.-instance_method" title="#errors the errors stored if encountered during validation process. (instance method)">- (Array) <strong>errors the errors stored if encountered during validation process.</strong>(theerrorsstored) </a>
-    
-
-    
-  </span>
-  
-  
-  
-    
-      <span class="note title readonly">readonly</span>
-    
-    
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>An array of hashes, each Hash being the description of an error.</p>
-</div></span>
-  
-</li>
-
-    
-  </ul>
-
 
 
 
@@ -203,6 +140,31 @@
     </h2>
 
     <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#errors-instance_method" title="#errors (instance method)">- (Array) <strong>errors</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Getter for the errors, cloning it so no error can be added from outside of
+the report_error method.</p>
+</div></span>
+  
+</li>
+
       
         <li class="public ">
   <span class="summary_signature">
@@ -286,12 +248,12 @@
       <pre class="lines">
 
 
-13
-14
-15</pre>
+9
+10
+11</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 13</span>
+      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 9</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_initialize'>initialize</span>
   <span class='ivar'>@errors</span> <span class='op'>=</span> <span class='const'>Array</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
@@ -303,15 +265,15 @@
   
 </div>
 
-  <div id="instance_attr_details" class="attr_details">
-    <h2>Instance Attribute Details</h2>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
     
-      
-      <span id=""></span>
       <div class="method_details first">
   <h3 class="signature first" id="errors-instance_method">
   
-    - (<tt>Object</tt>) <strong>errors</strong>  <span class="extras">(readonly)</span>
+    - (<tt>Array</tt>) <strong>errors</strong> 
   
 
   
@@ -320,50 +282,8 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Returns the value of attribute errors</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-10
-11
-12</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 10</span>
-
-<span class='kw'>def</span> <span class='id identifier rubyid_errors'>errors</span>
-  <span class='ivar'>@errors</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      
-      <span id=""></span>
-      <div class="method_details ">
-  <h3 class="signature " id="errors the errors stored if encountered during validation process.-instance_method">
-  
-    - (<tt>Array</tt>) <strong>errors the errors stored if encountered during validation process.</strong>(theerrorsstored)  <span class="extras">(readonly)</span>
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Returns an array of hashes, each Hash being the description of an error.</p>
+<p>Getter for the errors, cloning it so no error can be added from outside of
+the report_error method</p>
 
 
   </div>
@@ -382,7 +302,7 @@
       
         &mdash;
         <div class='inline'>
-<p>an array of hashes, each Hash being the description of an error.</p>
+<p>the array of errors.</p>
 </div>
       
     </li>
@@ -395,26 +315,23 @@
       <pre class="lines">
 
 
-10</pre>
+23
+24
+25</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 10</span>
+      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 23</span>
 
-<span class='id identifier rubyid_attr_reader'>attr_reader</span> <span class='symbol'>:errors</span></pre>
+<span class='kw'>def</span> <span class='id identifier rubyid_errors'>errors</span>
+  <span class='ivar'>@errors</span><span class='period'>.</span><span class='id identifier rubyid_clone'>clone</span>
+<span class='kw'>end</span></pre>
     </td>
   </tr>
 </table>
 </div>
     
-  </div>
-
-
-  <div id="instance_method_details" class="method_details_list">
-    <h2>Instance Method Details</h2>
-
-    
-      <div class="method_details first">
-  <h3 class="signature first" id="report_error-instance_method">
+      <div class="method_details ">
+  <h3 class="signature " id="report_error-instance_method">
   
     - (<tt><span class='object_link'><a href="" title="Kharon::Handlers::Messages (class)">Kharon::Handlers::Messages</a></span></tt>) <strong>report_error</strong>(error_hash) 
   
@@ -477,16 +394,16 @@
       <pre class="lines">
 
 
-20
-21
-22
-23</pre>
+16
+17
+18
+19</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 20</span>
+      <pre class="code"><span class="info file"># File 'lib/kharon/handlers/messages.rb', line 16</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_report_error'>report_error</span><span class='lparen'>(</span><span class='id identifier rubyid_error_hash'>error_hash</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_errors'>errors</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_error_hash'>error_hash</span><span class='rparen'>)</span>
+  <span class='ivar'>@errors</span><span class='period'>.</span><span class='id identifier rubyid_push'>push</span><span class='lparen'>(</span><span class='id identifier rubyid_error_hash'>error_hash</span><span class='rparen'>)</span>
   <span class='kw'>self</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -499,7 +416,7 @@
 </div>
 
     <div id="footer">
-  Generated on Thu Jun 11 09:58:10 2015 by
+  Generated on Thu Jun 11 10:14:42 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
