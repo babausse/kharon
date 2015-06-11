@@ -52,14 +52,17 @@ The gem will be installed on your system, from then on you can use it inside you
 
 ## Configuration
 
-The configuration of the module is simple, juste use the #configure method from the Kharon::Factory module as follow :
+### Use exceptions or not use exceptions, that is the question
 
-```ruby
-Kharon::Factory.configure do |configuration|
-  # Decides whether you want to use exceptions or not. Default is TRUE.
-  configuration.use_exceptions(true)
-end
+In some cases you could want to not raise an exception each and every time an error occures in the validation process. To stop using exceptions, just type :
+
 ```
+Kharon.use_exceptions(false)
+```
+
+and put it somewhere in your application, typically in a /config/initializers/kharon.rb file for a rails application.
+
+You can put back the original behaviour by calling ir and passing true as the first parameter instead of false.
 
 ## Run tests
 
@@ -83,7 +86,7 @@ require "kharon"
 The Kharon::Validator class is the main class of this gem, it offers an interface to validate hashes and see if they fulfill requirements. first, you have to create an instance of the validator :
 
 ```ruby
-validator = Kharon::Factory.validator(hash_to_validate)
+validator = Kharon::Validator.new(hash_to_validate)
 ```
 
 Now your validator knows which hash it has to validate, now you can do :
