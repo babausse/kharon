@@ -1,3 +1,5 @@
+require "singleton"
+
 module Kharon
   module Handlers
 
@@ -8,7 +10,7 @@ module Kharon
 
       # Method used to report an error by raising the correct type of exception.
       # @param [Hash] error_hash a Hash describing the error.
-      # @raises [Kharon::Errors::Validation] the exception raised when an error is encountered.
+      # @raise [Kharon::Errors::Validation] the exception raised when an error is encountered.
       def report_error(error_hash)
         raise Kharon::Errors::Validation.new(error_hash)
       end

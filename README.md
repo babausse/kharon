@@ -118,6 +118,10 @@ This code is strictly equivalent to the one presented above, it uses the block s
 
 ## Full documentation
 
+### Generated documentation
+
+Generated documentation can be displayed by displaying the doc/index.html file in a browser.
+
 ### Methods
 
 Methods signification are pretty straight-forward as it validates type :

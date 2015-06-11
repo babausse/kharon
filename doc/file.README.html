@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Documentation by YARD 0.8.7.6
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  hasFrames = window.top.frames.main ? true : false;
+  relpath = '';
+  framesUrl = "frames.html#!file.README.html";
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+      Class List
+    </a>
+  
+    <a class="full_list_link" id="method_list_link"
+        href="method_list.html">
+      Method List
+    </a>
+  
+    <a class="full_list_link" id="file_list_link"
+        href="file_list.html">
+      File List
+    </a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+
+    <iframe id="search_frame"></iframe>
+
+    <div id="content"><div id='filecontents'><h1>Kharon the boatkeeper</h1>
+
+<h2>What is kharon ?</h2>
+
+<p>Charon (or Khàrôn in ancient greek) was, in the greek mythology, the ferryman to cross the Styx river. He decided who passed, and who didn&#39;t pass, and it&#39;s exactly what this gem does.</p>
+
+<p>It validates the datas in a hash given criterias about its keys, and let the execution of the program continue if the requirements are fulfilled, stop it if not. The datas in the hash are supposed to be strings, Kharon being designed to validate datas coming in a web application from the outside (tipically, datas passed in a querystring or a POST body).</p>
+
+<h2>Contact me</h2>
+
+<p>For any question or advice, contact me at <a href="mailto:vincent.courtois@mycar-innovations.com">vincent.courtois@mycar-innovations.com</a>. I&#39;ll answer as soon as possible, and thank you by advance for giving me some of your time.</p>
+
+<h2>Requirements</h2>
+
+<p>You&#39;ll just need Ruby 1.9.3 at least to make it work.</p>
+
+<h2>Installation</h2>
+
+<h3>From Rubygems.org</h3>
+
+<p>It&#39;s a gem, you know how to install a gem, or you should if you&#39;re using it in a ruby application. Okay, let&#39;s consider you don&#39;t, just type :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='id identifier rubyid_install'>install</span> <span class='id identifier rubyid_kharon'>kharon</span>
+</code></pre>
+
+<p>And... That&#39;s it ! Now it&#39;s installed and you can learn how to properly use it !</p>
+
+<h3>With bundler</h3>
+
+<p>Add it to your Gemfile :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kharon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>~&gt; 0.4.0</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<p>then run the following command :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_bundle'>bundle</span> <span class='id identifier rubyid_install'>install</span>
+</code></pre>
+
+<h3>From sources</h3>
+
+<p>Clone this repository whenether you want, go inside, then type the following command :</p>
+
+<pre class="code ruby"><code class="ruby">gem install kharon-0.3.0
+</code></pre>
+
+<p>The gem will be installed on your system, from then on you can use it inside your applications.</p>
+
+<h2>Configuration</h2>
+
+<h3>Use exceptions or not use exceptions, that is the question</h3>
+
+<p>In some cases you could want to not raise an exception each and every time an error occures in the validation process. To stop using exceptions, just type :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='const'>Kharon</span><span class='period'>.</span><span class='id identifier rubyid_use_exceptions'>use_exceptions</span><span class='lparen'>(</span><span class='kw'>false</span><span class='rparen'>)</span>
+</code></pre>
+
+<p>and put it somewhere in your application, typically in a /config/initializers/kharon.rb file for a rails application.</p>
+
+<p>You can put back the original behaviour by calling ir and passing true as the first parameter instead of false.</p>
+
+<h2>Run tests</h2>
+
+<p>This gem is tested using RSpec, to run the tests, clone the repository, go in, then type :</p>
+
+<pre class="code ruby"><code class="ruby">% bundle install
+% bundle exec rspec --format documentation --color
+</code></pre>
+
+<h2>How to use the gem</h2>
+
+<p>First, you need to include the gem to your application. Usually you can just do :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kharon</span><span class='tstring_end'>&quot;</span></span>
+</code></pre>
+
+<h3>The validator</h3>
+
+<p>The Kharon::Validator class is the main class of this gem, it offers an interface to validate hashes and see if they fulfill requirements. first, you have to create an instance of the validator :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_validator'>validator</span> <span class='op'>=</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Validator</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span><span class='lparen'>(</span><span class='id identifier rubyid_hash_to_validate'>hash_to_validate</span><span class='rparen'>)</span>
+</code></pre>
+
+<p>Now your validator knows which hash it has to validate, now you can do :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='comment'># Sees if the &quot;required_integer_key&quot; key is present, and an integer
+</span><span class='id identifier rubyid_validator'>validator</span><span class='period'>.</span><span class='id identifier rubyid_integer'>integer</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>required_integer_key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+</code></pre>
+
+<p>All the functions are listed in the full documentation below.</p>
+
+<h3>The helper</h3>
+
+<p>This gem was firstly designed to be used as a helper for Sinatra applications, so it contains another useful module : Kharon::Helpers. To use it in your Sinatra application, just type this in the controllers where you want it included :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_helpers'>helpers</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Helpers</span>
+</code></pre>
+
+<p>From there, you can type it in any of the routes of this controller :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_hash_to_validate'>hash_to_validate</span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_integer'>integer</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>required_integer_key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>This code is strictly equivalent to the one presented above, it uses the block syntax of ruby to give you a nice and fancy way to validate your datas !</p>
+
+<h2>Full documentation</h2>
+
+<h3>Methods</h3>
+
+<p>Methods signification are pretty straight-forward as it validates type :</p>
+
+<ul>
+<li>:integer</li>
+<li>:numeric</li>
+<li>:text</li>
+<li>:any</li>
+<li>:datetime</li>
+<li>:date</li>
+<li>:array</li>
+<li>:hash</li>
+<li>:boolean</li>
+<li>:mongoid</li>
+</ul>
+
+<h4>:any</h4>
+
+<p>This method will validate any value associated to the given key, it&#39;s useful if you just want to pass options like :required or :dependency</p>
+
+<h4>:mongoid</h4>
+
+<p>This method is only useful if you use Mongoid or an ORM linking MongoDB to your application. It validates the data associated with the key only if it&#39;s a string formatted as a MongoDB unique identifier.</p>
+
+<h3>Options</h3>
+
+<h4>:required</h4>
+
+<p>This option can be given to say that a key has to be in the hash for it to be validated. It can be used with all methods.</p>
+
+<h4>:dependency</h4>
+
+<p>This options say that this key needs another key to be present for the hash to be validated. It can be used with all methods.</p>
+
+<h4>:dependencies</h4>
+
+<p>This options is used to pass several dependecies at once, as an array of keys. See :dependency option for details. It can be used with all methods.
+Note: the :dependencies option <em>overrides</em> the :dependency option if both are given.</p>
+
+<h4>:in</h4>
+
+<p>This option is used to give an array of possible values for the given key. If the value of the key is not in thius array, the validator fails. It can be used with all methods.</p>
+
+<h4>:equals</h4>
+
+<p>For the value of a given key in the hash to be equal to the given value. It can be used with all methods.</p>
+
+<h4>:min</h4>
+
+<p>This option allows you to specify a non-strict minimum limit for the value associated with the given key. The value has to be passed as an integer. It can be used with :numeric or :integer methods.</p>
+
+<h4>:max</h4>
+
+<p>This option allows you to specify a non-strict maximum limit for the value associated with the given key. The value has to be passed as an integer. It can be used with :numeric or :integer methods.</p>
+
+<h4>:between</h4>
+
+<p>This option gives an interval in which the value of the given key must be to fulfill the requirement. The value has to be passed as an array of two integers, first the minimum, then the maximum. It can be used with :numeric or :integer methods.
+Note: the :between option <em>overrides</em> the :min <em>and</em> :max options if several are given.</p>
+
+<h4>:contains</h4>
+
+<p>This option is used to see if an array or a hash situated at the given key contains some values. The values must be passed as an array. This option can be used with the :hash and :array methods.</p>
+
+<h4>:has_keys</h4>
+
+<p>This option is used to see if a hash situated at the given key contains some keys. The values must be passed as an array. This option can be used with the :hash and :array methods.</p>
+
+<h4>:cast</h4>
+
+<p>This option, if not given, is set to TRUE. If given at false, doesn&#39;t type cast the result of the validation so you keep the original string and just check its type. It can be used with all methods.</p>
+
+<h4>:extract</h4>
+
+<p>This option, if not given, is set to TRUE. If given at false, doesn&#39;t extract the given key, just validate its type. It can be used with all methods.</p>
+
+<h4>:floor</h4>
+
+<p>The value of round must be a boolean to work properly. If given at TRUE, floor the decimal number identified by this key. This option can be used with the :numeric method.</p>
+
+<h4>:ceil</h4>
+
+<p>The value of round must be a boolean to work properly. If given at TRUE, ceil the decimal number identified by this key. This option can be used with the :numeric method.</p>
+
+<h4>:round</h4>
+
+<p>The value of round must be an integer to work properly. If given, round the decimal number keeping the given number of digits after the comma. This option can be used with the :numeric method.</p>
+
+<h4>:regex</h4>
+
+<p>The value of this option must be passed as a string. If given as a string, verity that the associated string matches the given regular expression. This option can be used with the :text method.</p>
+
+<h3>Example god damn it !</h3>
+
+<p>Here is an example to demonstrate the power of Kharon (made with the helper) :</p>
+
+<pre class="code ruby"><code class="ruby"><span class='ivar'>@validated</span> <span class='op'>=</span> <span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_parameters'>parameters</span><span class='rparen'>)</span> <span class='kw'>do</span>
+  <span class='id identifier rubyid_numeric'>numeric</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>price</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>min:</span> <span class='int'>0</span>
+  <span class='id identifier rubyid_datetime'>datetime</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>added</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id identifier rubyid_text'>text</span>     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>added_by</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>dependency:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>added</span><span class='tstring_end'>&quot;</span></span>
+<span class='kw'>end</span>
+</code></pre>
+
+<p>This example could validate the datas coming in the application in a search engine route for products in a supermarket.</p>
+</div></div>
+
+    <div id="footer">
+  Generated on Thu Jun 11 09:58:10 2015 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.8.7.6 (ruby-1.9.3).
+</div>
+
+  </body>
+</html>

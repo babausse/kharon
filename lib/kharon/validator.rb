@@ -237,7 +237,7 @@ module Kharon
 
     # Syntaxic sugar used to chack several dependencies at once.
     # @param [Object] key the key needing another key to properly work.
-    # @param [Object] dependency the key needed by another key for it to properly work.
+    # @param [Object] dependencies the keys needed by another key for it to properly work.
     # @raise [ArgumentError] if the required dependencies are not present.
     # @see self#check_dependency the associated singular method.
     def dependencies(key, dependencies)
@@ -294,7 +294,7 @@ module Kharon
 
     # Checks if the value associated with the given key has the given required values.
     # @param [Object] key the key associated with the value to check.
-    # @param [Array]  required_keys the values that the initial Enumerable typed value should contain.
+    # @param [Array]  required_values the values that the initial Enumerable typed value should contain.
     # @raise [ArgumentError] if the initial value has not each and every one of the given values.
     def contains?(key, values, required_values)
       raise_error(type: "contains.values", required: required_values, key: key) if (values & required_values) != required_values
@@ -384,7 +384,7 @@ module Kharon
 
     # Raises an error giving a message to display.
     # @param [String] message the the message to display with the exception.
-    # @raises ArgumentError an error to stop the execution when this method is invoked.
+    # @raise ArgumentError an error to stop the execution when this method is invoked.
     def raise_error(message)
       handler.report_error(message)
     end

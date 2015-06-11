@@ -5,9 +5,14 @@ module Kharon
     # @author Vincent Courtois <courtois.vincent@outlook.com>
     class Messages
 
-      # @!attribute [rw] errors the errors stored if encountered during validation process.
-        # @return [Array] an array of hashes, each Hash being the description of an error.
-      attr_accessor :errors
+      # @!attribute [r] errors the errors stored if encountered during validation process.
+      #   @return [Array] an array of hashes, each Hash being the description of an error.
+      attr_reader :errors
+
+      # Constructor of the class, initializing the errors array.
+      def initialize
+        @errors = Array.new
+      end
 
       # Method used to report an error by storing it in an array.
       # @param [Hash] error_hash a Hash describing the error.
