@@ -31,10 +31,10 @@ And... That's it ! Now it's installed and you can learn how to properly use it !
 Add it to your Gemfile :
 
 ```
-gem "kharon", "{version}"
+gem "kharon", "<version>"
 ```
 
-{version} being the version of the gem you want to install.
+<version> being the version of the gem you want to install.
 
 then run the following command :
 
@@ -47,10 +47,10 @@ bundle install
 Clone this repository whenether you want, go inside, then type the following command :
 
 ```
-gem install dist/kharon-{version}
+gem install dist/kharon-<version>
 ```
 
-{version} being the version of the gem you want to install.
+<version> being the version of the gem you want to install.
 
 The gem will be installed on your system, from then on you can use it inside your applications.
 
@@ -323,3 +323,7 @@ This error is raised when a given key, as a box, is not contained in the box it 
 - key : the key concerned by the error
 - container : the box whithin which the contained box must be
 - contained : the box that must be contained in the container
+
+### Does it work ?
+
+Yes, it works, unit tests results can be found here : {file:doc/results.html results of unit tests}
