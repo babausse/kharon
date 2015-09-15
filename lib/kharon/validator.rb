@@ -181,12 +181,24 @@ module Kharon
     # @param [Hash]   options the options applied to the initial value.
     def store_decimal(key, process, options)
       store_numeric(key, process, options)
-      if(options.has_key?(:round) and options[:round].kind_of?(Integer))
-        filtered[key] = filtered[key].round(options[:round]) if filtered.has_key?(key)
+      if options.has_key?(:round)
+        store_rounded_decimal(key, process, options)
       elsif(options.has_key?(:floor) and options[:floor] == true)
         filtered[key] = filtered[key].floor if filtered.has_key?(key)
       elsif(options.has_key?(:ceil) and options[:ceil] == true)
         filtered[key] = filtered[key].ceil if filtered.has_key?(key)
+      end
+    end
+
+    # Stores a decimal after rounding it with the convenient number of decimals.
+    # @param [Object] key the key associated with the value to store in the filtered datas.
+    # @param [Proc]   process a process (lambda) to execute on the initial value. Must contain strictly one argument.
+    # @param [Hash]   options the options applied to the initial value.
+    def store_rounded_decimal(key, process, options)
+      if options[:round].kind_of?(Integer)
+        filtered[key] = filtered[key].round(options[:round]) if filtered.has_key?(key)
+      elsif options[:round] == true
+        filtered[key] = filtered[key].round if filtered.has_key?(key)
       end
     end
 

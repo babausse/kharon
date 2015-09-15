@@ -31,8 +31,10 @@ And... That's it ! Now it's installed and you can learn how to properly use it !
 Add it to your Gemfile :
 
 ```
-gem "kharon", "~> 0.4.0"
+gem "kharon", "{version}"
 ```
+
+{version} being the version of the gem you want to install.
 
 then run the following command :
 
@@ -45,8 +47,10 @@ bundle install
 Clone this repository whenether you want, go inside, then type the following command :
 
 ```
-gem install kharon-0.3.0
+gem install dist/kharon-{version}
 ```
+
+{version} being the version of the gem you want to install.
 
 The gem will be installed on your system, from then on you can use it inside your applications.
 
@@ -54,7 +58,7 @@ The gem will be installed on your system, from then on you can use it inside you
 
 ### Use exceptions or not use exceptions, that is the question
 
-In some cases you could want to not raise an exception each and every time an error occures in the validation process. To stop using exceptions, just type :
+In some cases you could want to not raise an exception each and every time an error occurs in the validation process. To stop using exceptions, just type :
 
 ```
 Kharon.use_exceptions(false)
@@ -62,7 +66,7 @@ Kharon.use_exceptions(false)
 
 and put it somewhere in your application, typically in a /config/initializers/kharon.rb file for a rails application.
 
-You can put back the original behaviour by calling ir and passing true as the first parameter instead of false.
+You can put back the original behaviour by calling it and passing true as the first parameter, or no parameter, instead of false.
 
 ## Run tests
 
@@ -138,7 +142,7 @@ Methods signification are pretty straight-forward as it validates type :
 
 #### :any
 
-This method will validate any value associated to the given key, it's useful if you just want to pass options like :required or :dependency
+This method will validate any value associated to the given key, it's useful if you just want to pass options like :required or :dependency without checking for a particular type.
 
 #### :mongoid
 
@@ -152,7 +156,7 @@ This option can be given to say that a key has to be in the hash for it to be va
 
 #### :dependency
 
-This options say that this key needs another key to be present for the hash to be validated. It can be used with all methods.
+This option says that this key needs another key to be present for the hash to be validated. It can be used with all methods.
 
 #### :dependencies
 
@@ -198,15 +202,15 @@ This option, if not given, is set to TRUE. If given at false, doesn't extract th
 
 #### :floor
 
-The value of round must be a boolean to work properly. If given at TRUE, floor the decimal number identified by this key. This option can be used with the :numeric method.
+If given and TRUE, floors the decimal number identified by this key. This option can be used with the :numeric method.
 
 #### :ceil
 
-The value of round must be a boolean to work properly. If given at TRUE, ceil the decimal number identified by this key. This option can be used with the :numeric method.
+If given and TRUE, ceils the decimal number identified by this key. This option can be used with the :numeric method.
 
 #### :round
 
-The value of round must be an integer to work properly. If given, round the decimal number keeping the given number of digits after the comma. This option can be used with the :numeric method.
+If given, as an integer, rounds the decimal number keeping the given number of digits after the comma ; if given as a boolean, rounds the decimal number, leaving no decimal digits. This option can be used with the :numeric method.
 
 #### :regex
 

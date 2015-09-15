@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    kharon (0.5.1)
+    kharon (1.0.0)
       bson (>= 2.2.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    bson (2.2.2)
+    bson (3.1.0)
     diff-lcs (1.2.5)
     rack (1.6.1)
     rack-test (0.6.2)
@@ -32,11 +32,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bson (= 2.2.2)
   bundler (~> 1.8)
   kharon!
-  rack-test (= 0.6.2)
+  rack-test (>= 0.6.2)
   rake (~> 10.0)
   redcarpet (= 3.3.1)
-  rspec (= 3.0.0.beta2)
+  rspec (>= 3.0.0.beta2)
   yard (>= 0.8)

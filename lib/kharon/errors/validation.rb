@@ -1,3 +1,5 @@
+require "json"
+
 module Kharon
   module Errors
 

@@ -283,6 +283,12 @@ describe "Validator" do
           expect(validator.filtered).to eq({is_a_double: 1.0236})
         end
 
+        it "rounds the number when the option is passed as a boolean" do
+          validator = Kharon::Validator.new({is_a_double: 1.02363265})
+          validator.numeric(:is_a_double, round: true)
+          expect(validator.filtered).to eq({is_a_double: 1})
+        end
+
         it "doesn't round the number if passed with another type" do
           validator = Kharon::Validator.new({is_a_double: "1.02363265"})
           validator.numeric(:is_a_double, round: "anything here")

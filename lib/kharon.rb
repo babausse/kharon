@@ -1,13 +1,8 @@
-require "kharon/version"
-require "kharon/validator"
-require "kharon/helpers/validate"
-require "kharon/errors/validation"
-require "kharon/handlers/exceptions"
-require "kharon/handlers/messages"
-
 # Main module of the application.
 # @author Vincent Courtois <courtois.vincent@outlook.com>
 module Kharon
+
+  [:Validator, :Version, :Errors, :Handlers, :Helpers].each { |classname| autoload(classname, "kharon/#{classname.downcase}") }
 
   @@use_exceptions = true
 
