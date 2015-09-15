@@ -18,12 +18,12 @@ Gem::Specification.new do |specification|
 
   specification.required_ruby_version = ">= 1.9.3"
 
-  specification.add_runtime_dependency "bson", ">= 2.2.2"
+  specification.add_runtime_dependency "bson", "~> 2.2", ">= 2.2.2"
 
-  specification.add_development_dependency "yard", ">= 0.8"
+  specification.add_development_dependency "yard", "~> 0.8"
   specification.add_development_dependency "redcarpet", "3.3.1"
   specification.add_development_dependency "bundler", "~> 1.8"
   specification.add_development_dependency "rake", "~> 10.0"
-  specification.add_development_dependency "rack-test", ">= 0.6.2"
-  specification.add_development_dependency "rspec", ">= 3.0.0.beta2"
+  specification.add_development_dependency "rack-test", "~> 0.6.2"
+  specification.add_development_dependency "rspec", "~> 3.0", ">= 3.0.0"
 end
