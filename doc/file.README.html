@@ -92,8 +92,10 @@
 
 <p>Add it to your Gemfile :</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kharon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>~&gt; 0.4.0</span><span class='tstring_end'>&quot;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>kharon</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>{version}</span><span class='tstring_end'>&quot;</span></span>
 </code></pre>
+
+<p>version being the version of the gem you want to install.</p>
 
 <p>then run the following command :</p>
 
@@ -104,8 +106,10 @@
 
 <p>Clone this repository whenether you want, go inside, then type the following command :</p>
 
-<pre class="code ruby"><code class="ruby">gem install kharon-0.3.0
+<pre class="code ruby"><code class="ruby">gem install dist/kharon-{version}
 </code></pre>
+
+<p>version being the version of the gem you want to install.</p>
 
 <p>The gem will be installed on your system, from then on you can use it inside your applications.</p>
 
@@ -113,14 +117,14 @@
 
 <h3>Use exceptions or not use exceptions, that is the question</h3>
 
-<p>In some cases you could want to not raise an exception each and every time an error occures in the validation process. To stop using exceptions, just type :</p>
+<p>In some cases you could want to not raise an exception each and every time an error occurs in the validation process. To stop using exceptions, just type :</p>
 
 <pre class="code ruby"><code class="ruby"><span class='const'>Kharon</span><span class='period'>.</span><span class='id identifier rubyid_use_exceptions'>use_exceptions</span><span class='lparen'>(</span><span class='kw'>false</span><span class='rparen'>)</span>
 </code></pre>
 
 <p>and put it somewhere in your application, typically in a /config/initializers/kharon.rb file for a rails application.</p>
 
-<p>You can put back the original behaviour by calling ir and passing true as the first parameter instead of false.</p>
+<p>You can put back the original behaviour by calling it and passing true as the first parameter, or no parameter, instead of false.</p>
 
 <h2>Run tests</h2>
 
@@ -193,7 +197,7 @@
 
 <h4>:any</h4>
 
-<p>This method will validate any value associated to the given key, it&#39;s useful if you just want to pass options like :required or :dependency</p>
+<p>This method will validate any value associated to the given key, it&#39;s useful if you just want to pass options like :required or :dependency without checking for a particular type.</p>
 
 <h4>:mongoid</h4>
 
@@ -207,7 +211,7 @@
 
 <h4>:dependency</h4>
 
-<p>This options say that this key needs another key to be present for the hash to be validated. It can be used with all methods.</p>
+<p>This option says that this key needs another key to be present for the hash to be validated. It can be used with all methods.</p>
 
 <h4>:dependencies</h4>
 
@@ -253,36 +257,152 @@ Note: the :between option <em>overrides</em> the :min <em>and</em> :max options 
 
 <h4>:floor</h4>
 
-<p>The value of round must be a boolean to work properly. If given at TRUE, floor the decimal number identified by this key. This option can be used with the :numeric method.</p>
+<p>If given and TRUE, floors the decimal number identified by this key. This option can be used with the :numeric method.</p>
 
 <h4>:ceil</h4>
 
-<p>The value of round must be a boolean to work properly. If given at TRUE, ceil the decimal number identified by this key. This option can be used with the :numeric method.</p>
+<p>If given and TRUE, ceils the decimal number identified by this key. This option can be used with the :numeric method.</p>
 
 <h4>:round</h4>
 
-<p>The value of round must be an integer to work properly. If given, round the decimal number keeping the given number of digits after the comma. This option can be used with the :numeric method.</p>
+<p>If given, as an integer, rounds the decimal number keeping the given number of digits after the comma ; if given as a boolean, rounds the decimal number, leaving no decimal digits. This option can be used with the :numeric method.</p>
 
 <h4>:regex</h4>
 
 <p>The value of this option must be passed as a string. If given as a string, verity that the associated string matches the given regular expression. This option can be used with the :text method.</p>
 
-<h3>Example god damn it !</h3>
+<h4>:at_most</h4>
 
-<p>Here is an example to demonstrate the power of Kharon (made with the helper) :</p>
+<p>The value of this option must be passed as a box. When given, this option indicates the maximum value for the associated box. The associated box can&#39;t cross any of these coordinates.</p>
 
-<pre class="code ruby"><code class="ruby"><span class='ivar'>@validated</span> <span class='op'>=</span> <span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_parameters'>parameters</span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_numeric'>numeric</span>  <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>price</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span><span class='comma'>,</span> <span class='label'>min:</span> <span class='int'>0</span>
-  <span class='id identifier rubyid_datetime'>datetime</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>added</span><span class='tstring_end'>&quot;</span></span>
-  <span class='id identifier rubyid_text'>text</span>     <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>added_by</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>dependency:</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>added</span><span class='tstring_end'>&quot;</span></span>
-<span class='kw'>end</span>
-</code></pre>
+<h4>:at_least</h4>
 
-<p>This example could validate the datas coming in the application in a search engine route for products in a supermarket.</p>
+<p>The value of this option must be passed as a box. When given, this option indicates the minimum value for the associated box. The associated box can&#39;t be tinier than the given box.</p>
+
+<h3>Errors formats</h3>
+
+<p>In Kharon, errors are formatted in a particular way. Each error contains a hash (or associative array) describing its type, and giving special caracteristics if necessary.</p>
+
+<h4>Type error</h4>
+
+<p>The most common error. It&#39;s raised when a type is expected for a key, and the given type for this key is different. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the value &quot;type&quot;</li>
+<li>key : the key concerned by the error in the validated hash</li>
+<li>supposed : the type of which the value associated with the key is supposed to be</li>
+<li>given : the type effectively given for the value associated with the key</li>
+</ul>
+
+<h4>required error</h4>
+
+<p>This error is raised when a key was required in the validated hash, but was not given. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the value &quot;required&quot;</li>
+<li>key : the required, but not provided, key</li>
+</ul>
+
+<h4>dependency error</h4>
+
+<p>This error is raised when a dependency was needed, but not provided, for a key. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the value &quot;dependency&quot;</li>
+<li>key : the key needing another key to properly work</li>
+<li>dependency : the needed, but not provided, dependency</li>
+</ul>
+
+<h4>min/max error</h4>
+
+<p>This error is raised when a key must have a minimum or maximum value, but the provided value is below the minimum or above the maximum. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : has either &quot;min&quot; or &quot;max&quot; value</li>
+<li>supposed : the maximum or minimum value the provided value mustn&#39;t exceed</li>
+<li>key : the key concerned byt the error</li>
+<li>value : the value not respecting the minimum or maximum asked</li>
+</ul>
+
+<h4>in_array error</h4>
+
+<p>This error is raised when the value associated with a key should belong to a range of values, and doesn&#39;t. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;array.in&quot; value</li>
+<li>key : the key concerned byt the error</li>
+<li>supposed : the range of values in which the value associated with the key should belong to</li>
+<li>value : the value provided with the key</li>
+</ul>
+
+<h4>equals error</h4>
+
+<p>This error is raised when the value associated to a key was expected to be equal to a value, but wasn&#39;t. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;equals&quot; value</li>
+<li>key : the key concerned byt the error</li>
+<li>supposed : the value the key was supposed to have</li>
+<li>value : the effective value associated to the key</li>
+</ul>
+
+<h4>contains keys error</h4>
+
+<p>This error is raised when a key, which type is a hash, doesn&#39;t contain the provided values as keys. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;contains.keys&quot; value</li>
+<li>key : the key concerned byt the error</li>
+<li>required : the keys that must be contained in the value hash</li>
+<li>value : the hash provided with the validated key</li>
+</ul>
+
+<h4>contains values error</h4>
+
+<p>This error is raised when a key, which type is an array or a hash, doesn&#39;t contain the provided values. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;contains.values&quot; value</li>
+<li>key : the key concerned byt the error</li>
+<li>required : the values that must be contained in the value hash</li>
+<li>value : the hash provided with the validated key</li>
+</ul>
+
+<h4>regex error</h4>
+
+<p>This error is raised when a value was expecting to respect a regular expression, but didn&#39;t. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;regex&quot; value</li>
+<li>key : the key concerned by the error</li>
+<li>regex : the regular expression expected to be respected</li>
+<li>value : the effective value not respecting the regular expression</li>
+</ul>
+
+<h4>box format error</h4>
+
+<p>This error is raised when a geographic box is not well formatted. It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;box.format&quot; value</li>
+<li>key : the key concerned by the error</li>
+<li>value : the effective value of the box, not respecting the format of a box</li>
+</ul>
+
+<h4>box containment error</h4>
+
+<p>This error is raised when a given key, as a box, is not contained in the box it should be (with the :at_most and :at_least options). It&#39;s formatted as followed :</p>
+
+<ul>
+<li>type : always has the &quot;box.containment&quot; value</li>
+<li>key : the key concerned by the error</li>
+<li>container : the box whithin which the contained box must be</li>
+<li>contained : the box that must be contained in the container</li>
+</ul>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Jun 11 10:14:41 2015 by
+  Generated on Tue Sep 15 10:26:10 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

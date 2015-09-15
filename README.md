@@ -8,7 +8,7 @@ It validates the datas in a hash given criterias about its keys, and let the exe
 
 ## Contact me
 
-For any question or advice, contact me at vincent.courtois@mycar-innovations.com. I'll answer as soon as possible, and thank you by advance for giving me some of your time.
+For any question or advice, contact me at courtois.vincent@outlook.com. I'll answer as soon as possible, and thank you by advance for giving me some of your time.
 
 ## Requirements
 
@@ -129,6 +129,7 @@ Generated documentation can be displayed by displaying the doc/index.html file i
 ### Methods
 
 Methods signification are pretty straight-forward as it validates type :
+
 - :integer
 - :numeric
 - :text
@@ -216,16 +217,109 @@ If given, as an integer, rounds the decimal number keeping the given number of d
 
 The value of this option must be passed as a string. If given as a string, verity that the associated string matches the given regular expression. This option can be used with the :text method.
 
-### Example god damn it !
+#### :at_most
 
-Here is an example to demonstrate the power of Kharon (made with the helper) :
+The value of this option must be passed as a box. When given, this option indicates the maximum value for the associated box. The associated box can't cross any of these coordinates.
 
-```ruby
-@validated = validate(parameters) do
-  numeric  "price", required: true, min: 0
-  datetime "added"
-  text     "added_by", dependency: "added"
-end
-```
+#### :at_least
 
-This example could validate the datas coming in the application in a search engine route for products in a supermarket.
+The value of this option must be passed as a box. When given, this option indicates the minimum value for the associated box. The associated box can't be tinier than the given box.
+
+### Errors formats
+
+In Kharon, errors are formatted in a particular way. Each error contains a hash (or associative array) describing its type, and giving special caracteristics if necessary.
+
+#### Type error
+
+The most common error. It's raised when a type is expected for a key, and the given type for this key is different. It's formatted as followed :
+
+- type : always has the value "type"
+- key : the key concerned by the error in the validated hash
+- supposed : the type of which the value associated with the key is supposed to be
+- given : the type effectively given for the value associated with the key
+
+#### required error
+
+This error is raised when a key was required in the validated hash, but was not given. It's formatted as followed :
+
+- type : always has the value "required"
+- key : the required, but not provided, key
+
+#### dependency error
+
+This error is raised when a dependency was needed, but not provided, for a key. It's formatted as followed :
+
+- type : always has the value "dependency"
+- key : the key needing another key to properly work
+- dependency : the needed, but not provided, dependency
+
+#### min/max error
+
+This error is raised when a key must have a minimum or maximum value, but the provided value is below the minimum or above the maximum. It's formatted as followed :
+
+- type : has either "min" or "max" value
+- supposed : the maximum or minimum value the provided value mustn't exceed
+- key : the key concerned byt the error
+- value : the value not respecting the minimum or maximum asked
+
+#### in_array error
+
+This error is raised when the value associated with a key should belong to a range of values, and doesn't. It's formatted as followed :
+
+- type : always has the "array.in" value
+- key : the key concerned byt the error
+- supposed : the range of values in which the value associated with the key should belong to
+- value : the value provided with the key
+
+#### equals error
+
+This error is raised when the value associated to a key was expected to be equal to a value, but wasn't. It's formatted as followed :
+
+- type : always has the "equals" value
+- key : the key concerned byt the error
+- supposed : the value the key was supposed to have
+- value : the effective value associated to the key
+
+#### contains keys error
+
+This error is raised when a key, which type is a hash, doesn't contain the provided values as keys. It's formatted as followed :
+
+- type : always has the "contains.keys" value
+- key : the key concerned byt the error
+- required : the keys that must be contained in the value hash
+- value : the hash provided with the validated key
+
+#### contains values error
+
+This error is raised when a key, which type is an array or a hash, doesn't contain the provided values. It's formatted as followed :
+
+- type : always has the "contains.values" value
+- key : the key concerned byt the error
+- required : the values that must be contained in the value hash
+- value : the hash provided with the validated key
+
+#### regex error
+
+This error is raised when a value was expecting to respect a regular expression, but didn't. It's formatted as followed :
+
+- type : always has the "regex" value
+- key : the key concerned by the error
+- regex : the regular expression expected to be respected
+- value : the effective value not respecting the regular expression
+
+#### box format error
+
+This error is raised when a geographic box is not well formatted. It's formatted as followed :
+
+- type : always has the "box.format" value
+- key : the key concerned by the error
+- value : the effective value of the box, not respecting the format of a box
+
+#### box containment error
+
+This error is raised when a given key, as a box, is not contained in the box it should be (with the :at_most and :at_least options). It's formatted as followed :
+
+- type : always has the "box.containment" value
+- key : the key concerned by the error
+- container : the box whithin which the contained box must be
+- contained : the box that must be contained in the container
