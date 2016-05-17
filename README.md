@@ -96,9 +96,11 @@ validator = Kharon::Validator.new(hash_to_validate)
 Now your validator knows which hash it has to validate, now you can do :
 
 ```ruby
-# Sees if the "required_integer_key" key is present, and an integer
-validator.integer("required_integer_key", required: true)
+# Sees if the :required_integer_key key is present, and an integer
+validator.integer(:required_integer_key, required: true)
 ```
+
+Note: all keys are converted in symbols, and you must use symbols in all method calls on a validator.
 
 All the functions are listed in the full documentation below.
 

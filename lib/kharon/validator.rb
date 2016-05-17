@@ -21,7 +21,7 @@ module Kharon
     # @example create a new instance of validator.
     #   @validator = Kharon::Validator.new({key: "value"})
     def initialize(datas)
-      @datas    = datas
+      @datas    = Hash[datas.map { |k, v| [k.to_sym, v] }]
       @filtered = Hash.new
       @handler  = Kharon.errors_handler
     end
@@ -144,6 +144,14 @@ module Kharon
     def email(key, options = {})
       before_all(key, options)
       match?(key, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/) ? store(key, ->(item){item}, options) : raise_type_error(key, "Email")
+    end
+
+    def method_missing(name, *arguments, &block)
+      respond_to?(name) ? datas[name] : super
+    end
+
+    def respond_to?(name, include_private = false)
+      datas.keys.include?(name.to_sym) ? true : super
     end
 
     private
