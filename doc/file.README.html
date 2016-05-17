@@ -158,255 +158,238 @@
 
 <h3>The helper</h3>
 
-<p>This gem was firstly designed to be used as a helper for Sinatra applications, so it contains another useful module : Kharon::Helpers. To use it in your Sinatra application, just type this in the controllers where you want it included :</p>
+<p>This gem was firstly designed to be used in controllers for Rails or Sinatra applications. To use it easily in such a context, include the Kharon::Validate module and the validate method, for example for a Rails controller :</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_helpers'>helpers</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Helpers</span>
-</code></pre>
+<pre class="code ruby"><code class="ruby"><span class='kw'>class</span> <span class='const'>DummyController</span> <span class='op'>&lt;</span> <span class='const'>ApplicationController</span>
+  <span class='id identifier rubyid_include'>include</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Validate</span>
 
-<p>From there, you can type it in any of the routes of this controller :</p>
-
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_hash_to_validate'>hash_to_validate</span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_integer'>integer</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>required_integer_key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span>
+  <span class='kw'>def</span> <span class='id identifier rubyid_show'>show</span>
+    <span class='id identifier rubyid_validate'>validate</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='rparen'>)</span> <span class='kw'>do</span>
+      <span class='id identifier rubyid_mongoid'>mongoid</span> <span class='symbol'>:id</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
 <span class='kw'>end</span>
 </code></pre>
 
-<p>This code is strictly equivalent to the one presented above, it uses the block syntax of ruby to give you a nice and fancy way to validate your datas !</p>
+<pre class="code ruby"><code class="ruby">
+This code is strictly equivalent to the one presented above, it uses the block syntax of ruby to give you a nice and fancy way to validate your datas !
 
-<h2>Full documentation</h2>
+## Full documentation
 
-<h3>Generated documentation</h3>
+### Generated documentation
 
-<p>Generated documentation can be displayed by displaying the doc/index.html file in a browser.</p>
+Generated documentation can be displayed by displaying the doc/index.html file in a browser.
 
-<h3>Methods</h3>
+### Methods
 
-<p>Methods signification are pretty straight-forward as it validates type :</p>
+Methods signification are pretty straight-forward as it validates type :
 
-<ul>
-<li>:integer</li>
-<li>:numeric</li>
-<li>:text</li>
-<li>:any</li>
-<li>:datetime</li>
-<li>:date</li>
-<li>:array</li>
-<li>:hash</li>
-<li>:boolean</li>
-<li>:mongoid</li>
-</ul>
+- :integer
+- :numeric
+- :text
+- :any
+- :datetime
+- :date
+- :array
+- :hash
+- :boolean
+- :mongoid
 
-<h4>:any</h4>
+#### :any
 
-<p>This method will validate any value associated to the given key, it&#39;s useful if you just want to pass options like :required or :dependency without checking for a particular type.</p>
+This method will validate any value associated to the given key, it's useful if you just want to pass options like :required or :dependency without checking for a particular type.
 
-<h4>:mongoid</h4>
+#### :mongoid
 
-<p>This method is only useful if you use Mongoid or an ORM linking MongoDB to your application. It validates the data associated with the key only if it&#39;s a string formatted as a MongoDB unique identifier.</p>
+This method is only useful if you use Mongoid or an ORM linking MongoDB to your application. It validates the data associated with the key only if it's a string formatted as a MongoDB unique identifier.
 
-<h3>Options</h3>
+### Options
 
-<h4>:required</h4>
+#### :required
 
-<p>This option can be given to say that a key has to be in the hash for it to be validated. It can be used with all methods.</p>
+This option can be given to say that a key has to be in the hash for it to be validated. It can be used with all methods.
 
-<h4>:dependency</h4>
+#### :dependency
 
-<p>This option says that this key needs another key to be present for the hash to be validated. It can be used with all methods.</p>
+This option says that this key needs another key to be present for the hash to be validated. It can be used with all methods.
 
-<h4>:dependencies</h4>
+#### :dependencies
 
-<p>This options is used to pass several dependecies at once, as an array of keys. See :dependency option for details. It can be used with all methods.
-Note: the :dependencies option <em>overrides</em> the :dependency option if both are given.</p>
+This options is used to pass several dependecies at once, as an array of keys. See :dependency option for details. It can be used with all methods.
+Note: the :dependencies option *overrides* the :dependency option if both are given.
 
-<h4>:in</h4>
+#### :in
 
-<p>This option is used to give an array of possible values for the given key. If the value of the key is not in thius array, the validator fails. It can be used with all methods.</p>
+This option is used to give an array of possible values for the given key. If the value of the key is not in thius array, the validator fails. It can be used with all methods.
 
-<h4>:equals</h4>
+#### :equals
 
-<p>For the value of a given key in the hash to be equal to the given value. It can be used with all methods.</p>
+this method compares the value of the given key in the hash to be equal to the given value. It can be used with all methods.
 
-<h4>:min</h4>
+#### :equals_key
 
-<p>This option allows you to specify a non-strict minimum limit for the value associated with the given key. The value has to be passed as an integer. It can be used with :numeric or :integer methods.</p>
+this method compares the value of the given key in the hash to be equal to the value associated with the compared key in the same hash. It can be used with all methods.
 
-<h4>:max</h4>
+#### :min
 
-<p>This option allows you to specify a non-strict maximum limit for the value associated with the given key. The value has to be passed as an integer. It can be used with :numeric or :integer methods.</p>
+This option allows you to specify a non-strict minimum limit for the value associated with the given key. The value has to be passed as an integer. It can be used with :numeric or :integer methods.
 
-<h4>:between</h4>
+#### :max
 
-<p>This option gives an interval in which the value of the given key must be to fulfill the requirement. The value has to be passed as an array of two integers, first the minimum, then the maximum. It can be used with :numeric or :integer methods.
-Note: the :between option <em>overrides</em> the :min <em>and</em> :max options if several are given.</p>
+This option allows you to specify a non-strict maximum limit for the value associated with the given key. The value has to be passed as an integer. It can be used with :numeric or :integer methods.
 
-<h4>:contains</h4>
+#### :between
 
-<p>This option is used to see if an array or a hash situated at the given key contains some values. The values must be passed as an array. This option can be used with the :hash and :array methods.</p>
+This option gives an interval in which the value of the given key must be to fulfill the requirement. The value has to be passed as an array of two integers, first the minimum, then the maximum. It can be used with :numeric or :integer methods.
+Note: the :between option *overrides* the :min *and* :max options if several are given.
 
-<h4>:has_keys</h4>
+#### :contains
 
-<p>This option is used to see if a hash situated at the given key contains some keys. The values must be passed as an array. This option can be used with the :hash and :array methods.</p>
+This option is used to see if an array or a hash situated at the given key contains some values. The values must be passed as an array. This option can be used with the :hash and :array methods.
 
-<h4>:cast</h4>
+#### :has_keys
 
-<p>This option, if not given, is set to TRUE. If given at false, doesn&#39;t type cast the result of the validation so you keep the original string and just check its type. It can be used with all methods.</p>
+This option is used to see if a hash situated at the given key contains some keys. The values must be passed as an array. This option can be used with the :hash and :array methods.
 
-<h4>:extract</h4>
+#### :cast
 
-<p>This option, if not given, is set to TRUE. If given at false, doesn&#39;t extract the given key, just validate its type. It can be used with all methods.</p>
+This option, if not given, is set to TRUE. If given at false, doesn't type cast the result of the validation so you keep the original string and just check its type. It can be used with all methods.
 
-<h4>:floor</h4>
+#### :extract
 
-<p>If given and TRUE, floors the decimal number identified by this key. This option can be used with the :numeric method.</p>
+This option, if not given, is set to TRUE. If given at false, doesn't extract the given key, just validate its type. It can be used with all methods.
 
-<h4>:ceil</h4>
+#### :floor
 
-<p>If given and TRUE, ceils the decimal number identified by this key. This option can be used with the :numeric method.</p>
+If given and TRUE, floors the decimal number identified by this key. This option can be used with the :numeric method.
 
-<h4>:round</h4>
+#### :ceil
 
-<p>If given, as an integer, rounds the decimal number keeping the given number of digits after the comma ; if given as a boolean, rounds the decimal number, leaving no decimal digits. This option can be used with the :numeric method.</p>
+If given and TRUE, ceils the decimal number identified by this key. This option can be used with the :numeric method.
 
-<h4>:regex</h4>
+#### :round
 
-<p>The value of this option must be passed as a string. If given as a string, verity that the associated string matches the given regular expression. This option can be used with the :text method.</p>
+If given, as an integer, rounds the decimal number keeping the given number of digits after the comma ; if given as a boolean, rounds the decimal number, leaving no decimal digits. This option can be used with the :numeric method.
 
-<h4>:at_most</h4>
+#### :regex
 
-<p>The value of this option must be passed as a box. When given, this option indicates the maximum value for the associated box. The associated box can&#39;t cross any of these coordinates.</p>
+The value of this option must be passed as a string. If given as a string, verity that the associated string matches the given regular expression. This option can be used with the :text method.
 
-<h4>:at_least</h4>
+#### :at_most
 
-<p>The value of this option must be passed as a box. When given, this option indicates the minimum value for the associated box. The associated box can&#39;t be tinier than the given box.</p>
+The value of this option must be passed as a box. When given, this option indicates the maximum value for the associated box. The associated box can't cross any of these coordinates.
 
-<h3>Errors formats</h3>
+#### :at_least
 
-<p>In Kharon, errors are formatted in a particular way. Each error contains a hash (or associative array) describing its type, and giving special caracteristics if necessary.</p>
+The value of this option must be passed as a box. When given, this option indicates the minimum value for the associated box. The associated box can't be tinier than the given box.
 
-<h4>Type error</h4>
+### Errors formats
 
-<p>The most common error. It&#39;s raised when a type is expected for a key, and the given type for this key is different. It&#39;s formatted as followed :</p>
+In Kharon, errors are formatted in a particular way. Each error contains a hash (or associative array) describing its type, and giving special caracteristics if necessary.
 
-<ul>
-<li>type : always has the value &quot;type&quot;</li>
-<li>key : the key concerned by the error in the validated hash</li>
-<li>supposed : the type of which the value associated with the key is supposed to be</li>
-<li>given : the type effectively given for the value associated with the key</li>
-</ul>
+#### Type error
 
-<h4>required error</h4>
+The most common error. It's raised when a type is expected for a key, and the given type for this key is different. It's formatted as followed :
 
-<p>This error is raised when a key was required in the validated hash, but was not given. It&#39;s formatted as followed :</p>
+- type : always has the value &quot;type&quot;
+- key : the key concerned by the error in the validated hash
+- supposed : the type of which the value associated with the key is supposed to be
+- given : the type effectively given for the value associated with the key
 
-<ul>
-<li>type : always has the value &quot;required&quot;</li>
-<li>key : the required, but not provided, key</li>
-</ul>
+#### required error
 
-<h4>dependency error</h4>
+This error is raised when a key was required in the validated hash, but was not given. It's formatted as followed :
 
-<p>This error is raised when a dependency was needed, but not provided, for a key. It&#39;s formatted as followed :</p>
+- type : always has the value &quot;required&quot;
+- key : the required, but not provided, key
 
-<ul>
-<li>type : always has the value &quot;dependency&quot;</li>
-<li>key : the key needing another key to properly work</li>
-<li>dependency : the needed, but not provided, dependency</li>
-</ul>
+#### dependency error
 
-<h4>min/max error</h4>
+This error is raised when a dependency was needed, but not provided, for a key. It's formatted as followed :
 
-<p>This error is raised when a key must have a minimum or maximum value, but the provided value is below the minimum or above the maximum. It&#39;s formatted as followed :</p>
+- type : always has the value &quot;dependency&quot;
+- key : the key needing another key to properly work
+- dependency : the needed, but not provided, dependency
 
-<ul>
-<li>type : has either &quot;min&quot; or &quot;max&quot; value</li>
-<li>supposed : the maximum or minimum value the provided value mustn&#39;t exceed</li>
-<li>key : the key concerned byt the error</li>
-<li>value : the value not respecting the minimum or maximum asked</li>
-</ul>
+#### min/max error
 
-<h4>in_array error</h4>
+This error is raised when a key must have a minimum or maximum value, but the provided value is below the minimum or above the maximum. It's formatted as followed :
 
-<p>This error is raised when the value associated with a key should belong to a range of values, and doesn&#39;t. It&#39;s formatted as followed :</p>
+- type : has either &quot;min&quot; or &quot;max&quot; value
+- supposed : the maximum or minimum value the provided value mustn't exceed
+- key : the key concerned byt the error
+- value : the value not respecting the minimum or maximum asked
 
-<ul>
-<li>type : always has the &quot;array.in&quot; value</li>
-<li>key : the key concerned byt the error</li>
-<li>supposed : the range of values in which the value associated with the key should belong to</li>
-<li>value : the value provided with the key</li>
-</ul>
+#### in_array error
 
-<h4>equals error</h4>
+This error is raised when the value associated with a key should belong to a range of values, and doesn't. It's formatted as followed :
 
-<p>This error is raised when the value associated to a key was expected to be equal to a value, but wasn&#39;t. It&#39;s formatted as followed :</p>
+- type : always has the &quot;array.in&quot; value
+- key : the key concerned byt the error
+- supposed : the range of values in which the value associated with the key should belong to
+- value : the value provided with the key
 
-<ul>
-<li>type : always has the &quot;equals&quot; value</li>
-<li>key : the key concerned byt the error</li>
-<li>supposed : the value the key was supposed to have</li>
-<li>value : the effective value associated to the key</li>
-</ul>
+#### equals error
 
-<h4>contains keys error</h4>
+This error is raised when the value associated to a key was expected to be equal to a value, but wasn't. It's formatted as followed :
 
-<p>This error is raised when a key, which type is a hash, doesn&#39;t contain the provided values as keys. It&#39;s formatted as followed :</p>
+- type : always has the &quot;equals&quot; value
+- key : the key concerned byt the error
+- supposed : the value the key was supposed to have
+- value : the effective value associated to the key
 
-<ul>
-<li>type : always has the &quot;contains.keys&quot; value</li>
-<li>key : the key concerned byt the error</li>
-<li>required : the keys that must be contained in the value hash</li>
-<li>value : the hash provided with the validated key</li>
-</ul>
+#### contains keys error
 
-<h4>contains values error</h4>
+This error is raised when a key, which type is a hash, doesn't contain the provided values as keys. It's formatted as followed :
 
-<p>This error is raised when a key, which type is an array or a hash, doesn&#39;t contain the provided values. It&#39;s formatted as followed :</p>
+- type : always has the &quot;contains.keys&quot; value
+- key : the key concerned byt the error
+- required : the keys that must be contained in the value hash
+- value : the hash provided with the validated key
 
-<ul>
-<li>type : always has the &quot;contains.values&quot; value</li>
-<li>key : the key concerned byt the error</li>
-<li>required : the values that must be contained in the value hash</li>
-<li>value : the hash provided with the validated key</li>
-</ul>
+#### contains values error
 
-<h4>regex error</h4>
+This error is raised when a key, which type is an array or a hash, doesn't contain the provided values. It's formatted as followed :
 
-<p>This error is raised when a value was expecting to respect a regular expression, but didn&#39;t. It&#39;s formatted as followed :</p>
+- type : always has the &quot;contains.values&quot; value
+- key : the key concerned byt the error
+- required : the values that must be contained in the value hash
+- value : the hash provided with the validated key
 
-<ul>
-<li>type : always has the &quot;regex&quot; value</li>
-<li>key : the key concerned by the error</li>
-<li>regex : the regular expression expected to be respected</li>
-<li>value : the effective value not respecting the regular expression</li>
-</ul>
+#### regex error
 
-<h4>box format error</h4>
+This error is raised when a value was expecting to respect a regular expression, but didn't. It's formatted as followed :
 
-<p>This error is raised when a geographic box is not well formatted. It&#39;s formatted as followed :</p>
+- type : always has the &quot;regex&quot; value
+- key : the key concerned by the error
+- regex : the regular expression expected to be respected
+- value : the effective value not respecting the regular expression
 
-<ul>
-<li>type : always has the &quot;box.format&quot; value</li>
-<li>key : the key concerned by the error</li>
-<li>value : the effective value of the box, not respecting the format of a box</li>
-</ul>
+#### box format error
 
-<h4>box containment error</h4>
+This error is raised when a geographic box is not well formatted. It's formatted as followed :
 
-<p>This error is raised when a given key, as a box, is not contained in the box it should be (with the :at_most and :at_least options). It&#39;s formatted as followed :</p>
+- type : always has the &quot;box.format&quot; value
+- key : the key concerned by the error
+- value : the effective value of the box, not respecting the format of a box
 
-<ul>
-<li>type : always has the &quot;box.containment&quot; value</li>
-<li>key : the key concerned by the error</li>
-<li>container : the box whithin which the contained box must be</li>
-<li>contained : the box that must be contained in the container</li>
-</ul>
+#### box containment error
 
-<h3>Does it work ?</h3>
+This error is raised when a given key, as a box, is not contained in the box it should be (with the :at_most and :at_least options). It's formatted as followed :
 
-<p>Yes, it works, unit tests results can be found here : <a href="file.results.html" title="results of unit tests">results of unit tests</a></p>
+- type : always has the &quot;box.containment&quot; value
+- key : the key concerned by the error
+- container : the box whithin which the contained box must be
+- contained : the box that must be contained in the container
+
+### Does it work ?
+
+Yes, it works, unit tests results can be found here : {file:doc/results.html results of unit tests}
+</code></pre>
 </div></div>
 
     <div id="footer">
-  Generated on Tue Sep 15 10:54:07 2015 by
+  Generated on Tue May 17 11:54:24 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

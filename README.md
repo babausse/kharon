@@ -104,18 +104,19 @@ All the functions are listed in the full documentation below.
 
 ### The helper
 
-This gem was firstly designed to be used as a helper for Sinatra applications, so it contains another useful module : Kharon::Helpers. To use it in your Sinatra application, just type this in the controllers where you want it included :
+This gem was firstly designed to be used in controllers for Rails or Sinatra applications. To use it easily in such a context, include the Kharon::Validate module and the validate method, for example for a Rails controller :
 
 ```ruby
-helpers Kharon::Helpers
-```
+class DummyController < ApplicationController
+  include Kharon::Validate
 
-From there, you can type it in any of the routes of this controller :
-
-```ruby
-validate(hash_to_validate) do
-  integer "required_integer_key", required: true
+  def show
+    validate(params) do
+      mongoid :id
+    end
+  end
 end
+```
 ```
 
 This code is strictly equivalent to the one presented above, it uses the block syntax of ruby to give you a nice and fancy way to validate your datas !

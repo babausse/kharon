@@ -283,7 +283,7 @@ a {
   <dl style="margin-left: 0px;">
   <dt id="example_group_1" class="passed">Errors::Validation</dt>
     <script type="text/javascript">moveProgressBar('0.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly stores the error hash</span><span class='duration'>0.00305s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">correctly stores the error hash</span><span class='duration'>0.01431s</span></dd>
     <script type="text/javascript">moveProgressBar('0.6');</script>
     <dd class="example passed"><span class="passed_spec_name">correctly return the JSON equivalent of the error hash as message</span><span class='duration'>0.00019s</span></dd>
   </dl>
@@ -292,1335 +292,1349 @@ a {
   <dl style="margin-left: 0px;">
   <dt id="example_group_2" class="passed">Handlers::Exceptions</dt>
     <script type="text/javascript">moveProgressBar('0.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">always returns the same instance</span><span class='duration'>0.01116s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">always returns the same instance</span><span class='duration'>0.00185s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_3" class="passed">#report_error</dt>
     <script type="text/javascript">moveProgressBar('1.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">raises an error of the right type</span><span class='duration'>0.00081s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">raises an error of the right type</span><span class='duration'>0.00093s</span></dd>
   </dl>
 </div>
 <div id="div_group_4" class="example_group passed">
   <dl style="margin-left: 0px;">
   <dt id="example_group_4" class="passed">Handlers::Messages</dt>
     <script type="text/javascript">moveProgressBar('1.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">can correctly store several errors</span><span class='duration'>0.00040s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">can correctly store several errors</span><span class='duration'>0.00045s</span></dd>
   </dl>
 </div>
 <div id="div_group_5" class="example_group passed">
   <dl style="margin-left: 0px;">
-  <dt id="example_group_5" class="passed">Validator</dt>
+  <dt id="example_group_5" class="passed">Validate</dt>
   </dl>
 </div>
 <div id="div_group_6" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_6" class="passed">integer</dt>
-    <script type="text/javascript">moveProgressBar('1.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an integer</span><span class='duration'>0.00186s</span></dd>
+  <dt id="example_group_6" class="passed">validate</dt>
+    <script type="text/javascript">moveProgressBar('1.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly validates a hash</span><span class='duration'>0.00159s</span></dd>
     <script type="text/javascript">moveProgressBar('2.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when given a float</span><span class='duration'>0.00016s</span></dd>
-    <script type="text/javascript">moveProgressBar('2.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when not given a numeric</span><span class='duration'>0.00011s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">fails when an error is raised by validation</span><span class='duration'>0.00016s</span></dd>
   </dl>
 </div>
 <div id="div_group_7" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_7" class="passed">options</dt>
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7" class="passed">Validator</dt>
   </dl>
 </div>
 <div id="div_group_8" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_8" class="passed">:rename</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_8" class="passed">integer</dt>
+    <script type="text/javascript">moveProgressBar('2.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an integer</span><span class='duration'>0.00008s</span></dd>
     <script type="text/javascript">moveProgressBar('2.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00010s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">fails when given a float</span><span class='duration'>0.00011s</span></dd>
     <script type="text/javascript">moveProgressBar('3.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00012s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">fails when not given a numeric</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_9" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_9" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('3.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('3.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_9" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_10" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_10" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('4.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('4.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_10" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('3.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('3.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_11" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_11" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('4.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00187s</span></dd>
-    <script type="text/javascript">moveProgressBar('5.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00015s</span></dd>
-    <script type="text/javascript">moveProgressBar('5.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_11" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('4.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('4.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_12" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_12" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('5.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('6.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('6.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_12" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('4.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('5.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_13" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_13" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('6.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('6.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00015s</span></dd>
+  <dt id="example_group_13" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('5.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00222s</span></dd>
+    <script type="text/javascript">moveProgressBar('5.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00015s</span></dd>
+    <script type="text/javascript">moveProgressBar('5.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_14" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_14" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('7.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('7.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('7.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_14" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('6.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('6.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('6.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_15" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_15" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('8.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('8.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_15" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('7.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('7.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_16" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_16" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('8.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('9.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_16" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('7.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('8.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('8.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_17" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_17" class="passed">:min</dt>
-    <script type="text/javascript">moveProgressBar('9.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is strictly greater than it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('9.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is equal to it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('10.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a min option is given, but not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_17" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('8.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('9.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_18" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_18" class="passed">:max</dt>
-    <script type="text/javascript">moveProgressBar('10.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is strictly lesser than it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('10.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is equal to it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('11.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max option is given, but not respected</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_18" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('9.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('9.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_19" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_19" class="passed">:between</dt>
-    <script type="text/javascript">moveProgressBar('11.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a between option is given, and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('11.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly lesser</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('12.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly greater</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('12.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the inferior limit</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('12.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the superio limit</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_19" class="passed">:min</dt>
+    <script type="text/javascript">moveProgressBar('10.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is strictly greater than it</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('10.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is equal to it</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('10.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a min option is given, but not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_20" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_20" class="passed">numeric</dt>
-    <script type="text/javascript">moveProgressBar('13.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an integer</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('13.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an decimal number with a dot</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('13.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an decimal number with a comma</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('13.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when not given a numeric</span><span class='duration'>0.00013s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_20" class="passed">:max</dt>
+    <script type="text/javascript">moveProgressBar('11.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is strictly lesser than it</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('11.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is equal to it</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('11.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max option is given, but not respected</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_21" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_21" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_21" class="passed">:between</dt>
+    <script type="text/javascript">moveProgressBar('11.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a between option is given, and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly lesser</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly greater</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the inferior limit</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('13.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the superio limit</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_22" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_22" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('14.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('14.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_22" class="passed">numeric</dt>
+    <script type="text/javascript">moveProgressBar('13.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an integer</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('13.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an decimal number with a dot</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('14.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an decimal number with a comma</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('14.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when not given a numeric</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_23" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_23" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('14.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('15.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_23" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_24" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_24" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('15.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('15.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_24" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('14.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('15.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_25" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_25" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('16.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('16.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('16.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_25" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('15.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('15.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_26" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_26" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('17.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('17.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('17.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_26" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('16.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('16.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_27" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_27" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('18.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('18.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_27" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('16.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('17.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('17.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_28" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_28" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('18.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('19.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('19.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_28" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('17.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('17.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('18.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_29" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_29" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('19.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_29" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('18.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('18.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_30" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_30" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('20.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('20.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_30" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('19.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('19.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('19.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_31" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_31" class="passed">:min</dt>
-    <script type="text/javascript">moveProgressBar('20.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is strictly greater than it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('21.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is equal to it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('21.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a min option is given, but not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_31" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('20.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('20.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00009s</span></dd>
   </dl>
 </div>
 <div id="div_group_32" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_32" class="passed">:max</dt>
-    <script type="text/javascript">moveProgressBar('21.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is strictly lesser than it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('22.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is equal to it</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('22.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max option is given, but not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_32" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('20.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('21.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_33" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_33" class="passed">:between</dt>
-    <script type="text/javascript">moveProgressBar('22.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a between option is given, and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('23.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly lesser</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('23.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly greater</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('23.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the inferior limit</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('24.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the superio limit</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_33" class="passed">:min</dt>
+    <script type="text/javascript">moveProgressBar('21.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is strictly greater than it</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('21.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a min option is given, and the value is equal to it</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('22.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a min option is given, but not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_34" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_34" class="passed">:round</dt>
-    <script type="text/javascript">moveProgressBar('24.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">rounds the number when the option is passed as an integer</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('24.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">rounds the number when the option is passed as a boolean</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('25.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't round the number if passed with another type</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_34" class="passed">:max</dt>
+    <script type="text/javascript">moveProgressBar('22.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is strictly lesser than it</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('22.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a max option is given, and the value is equal to it</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('23.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max option is given, but not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_35" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_35" class="passed">:floor</dt>
-    <script type="text/javascript">moveProgressBar('25.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">floors the number if passed to true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('25.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't floor the number if passed to false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_35" class="passed">:between</dt>
+    <script type="text/javascript">moveProgressBar('23.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a between option is given, and respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('23.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly lesser</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('23.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is strictly greater</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('24.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the inferior limit</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('24.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a max between option is given, but the value is equal to the superio limit</span><span class='duration'>0.00008s</span></dd>
   </dl>
 </div>
 <div id="div_group_36" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_36" class="passed">:ceil</dt>
-    <script type="text/javascript">moveProgressBar('26.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">ceils the number if passed to true</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('26.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't ceil the number if passed to false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_36" class="passed">:round</dt>
+    <script type="text/javascript">moveProgressBar('24.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">rounds the number when the option is passed as an integer</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">rounds the number when the option is passed as a boolean</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't round the number if passed with another type</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_37" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_37" class="passed">text</dt>
-    <script type="text/javascript">moveProgressBar('26.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an instance of String</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('26.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when given something else than an instance of String</span><span class='duration'>0.00009s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_37" class="passed">:floor</dt>
+    <script type="text/javascript">moveProgressBar('25.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">floors the number if passed to true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('26.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't floor the number if passed to false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_38" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_38" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_38" class="passed">:ceil</dt>
+    <script type="text/javascript">moveProgressBar('26.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">ceils the number if passed to true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('26.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't ceil the number if passed to false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_39" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_39" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('27.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('27.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_39" class="passed">text</dt>
+    <script type="text/javascript">moveProgressBar('27.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an instance of String</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('27.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when given something else than an instance of String</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_40" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_40" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('27.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('28.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00014s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_40" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_41" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_41" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('28.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('28.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_41" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('27.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('28.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_42" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_42" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('29.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('29.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('29.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_42" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('28.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('28.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_43" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_43" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('30.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('30.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('30.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_43" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('29.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('29.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_44" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_44" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('31.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('31.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00014s</span></dd>
+  <dt id="example_group_44" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('29.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('29.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('30.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_45" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_45" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('31.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('32.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('32.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_45" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('30.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('30.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('31.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_46" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_46" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('32.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('33.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_46" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('31.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('31.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_47" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_47" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('33.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('33.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00006s</span></dd>
+  <dt id="example_group_47" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('32.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('32.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('32.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_48" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_48" class="passed">:regex</dt>
-    <script type="text/javascript">moveProgressBar('33.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the regular expression is respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('34.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the regular expression is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_48" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('33.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
+    <script type="text/javascript">moveProgressBar('33.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00009s</span></dd>
   </dl>
 </div>
 <div id="div_group_49" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_49" class="passed">datetime</dt>
-    <script type="text/javascript">moveProgressBar('34.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid datetime as a string</span><span class='duration'>0.00056s</span></dd>
-    <script type="text/javascript">moveProgressBar('34.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid datetime as a DateTime Object</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('35.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when given something else than a valid datetime</span><span class='duration'>0.00025s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_49" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('33.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00006s</span></dd>
+    <script type="text/javascript">moveProgressBar('34.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_50" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_50" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_50" class="passed">:regex</dt>
+    <script type="text/javascript">moveProgressBar('34.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the regular expression is respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('34.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the regular expression is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_51" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_51" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('35.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('35.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00014s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_51" class="passed">datetime</dt>
+    <script type="text/javascript">moveProgressBar('35.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid datetime as a string</span><span class='duration'>0.00060s</span></dd>
+    <script type="text/javascript">moveProgressBar('35.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid datetime as a DateTime Object</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('35.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when given something else than a valid datetime</span><span class='duration'>0.00024s</span></dd>
   </dl>
 </div>
 <div id="div_group_52" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_52" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('36.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('36.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_52" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_53" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_53" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('36.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('37.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_53" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('35.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('36.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00015s</span></dd>
   </dl>
 </div>
 <div id="div_group_54" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_54" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('37.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('37.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('38.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_54" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('36.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('36.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_55" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_55" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('38.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('38.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('39.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_55" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('37.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('37.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_56" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_56" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('39.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('39.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_56" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('37.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00016s</span></dd>
+    <script type="text/javascript">moveProgressBar('38.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('38.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_57" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_57" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('40.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('40.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('40.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00014s</span></dd>
+  <dt id="example_group_57" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('38.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('39.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('39.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00016s</span></dd>
   </dl>
 </div>
 <div id="div_group_58" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_58" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('40.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('41.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_58" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('39.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('40.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_59" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_59" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('41.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('41.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_59" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('40.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('40.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00016s</span></dd>
+    <script type="text/javascript">moveProgressBar('41.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_60" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_60" class="passed">date</dt>
-    <script type="text/javascript">moveProgressBar('42.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid date as a string</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('42.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid date as a Date Object</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('42.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when given something else than a valid date</span><span class='duration'>0.00014s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_60" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('41.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('41.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_61" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_61" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_61" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('41.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('42.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_62" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_62" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('43.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('43.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00014s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_62" class="passed">date</dt>
+    <script type="text/javascript">moveProgressBar('42.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid date as a string</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('42.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid date as a Date Object</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('43.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when given something else than a valid date</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_63" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_63" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('43.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('44.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_63" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_64" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_64" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('44.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('44.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_64" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('43.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('43.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_65" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_65" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('45.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('45.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('45.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_65" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('44.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('44.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_66" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_66" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('46.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('46.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('46.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_66" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('44.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('45.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00018s</span></dd>
   </dl>
 </div>
 <div id="div_group_67" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_67" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('46.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('47.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_67" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('45.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('45.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('46.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_68" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_68" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('47.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('47.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('48.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_68" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('46.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('46.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('47.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_69" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_69" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('48.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('48.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00008s</span></dd>
+  <dt id="example_group_69" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('47.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('47.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_70" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_70" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('49.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('49.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_70" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('47.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('48.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('48.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00015s</span></dd>
   </dl>
 </div>
 <div id="div_group_71" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_71" class="passed">array</dt>
-    <script type="text/javascript">moveProgressBar('49.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an instance of Array</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('50.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when given something else than an instance of Array</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_71" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('48.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('49.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00009s</span></dd>
   </dl>
 </div>
 <div id="div_group_72" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_72" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_72" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('49.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('49.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_73" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_73" class="passed">:rename</dt>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_73" class="passed">array</dt>
+    <script type="text/javascript">moveProgressBar('50.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an instance of Array</span><span class='duration'>0.00008s</span></dd>
     <script type="text/javascript">moveProgressBar('50.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('50.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
+    <dd class="example passed"><span class="passed_spec_name">fails when given something else than an instance of Array</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_74" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_74" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('51.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('51.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_74" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_75" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_75" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('51.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('52.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00015s</span></dd>
+  <dt id="example_group_75" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('50.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('51.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_76" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_76" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('52.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('52.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('53.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_76" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('51.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('51.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_77" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_77" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('53.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('53.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('53.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_77" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('52.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('52.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_78" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_78" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('54.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('54.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_78" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('52.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('52.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('53.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_79" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_79" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('54.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('55.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('55.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_79" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('53.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('53.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('54.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_80" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_80" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('55.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('56.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_80" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('54.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('54.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_81" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_81" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('56.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('56.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_81" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('55.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('55.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('55.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_82" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_82" class="passed">:contains</dt>
-    <script type="text/javascript">moveProgressBar('57.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if all values are contained</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('57.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if only some values are contained</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('57.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if none of the values are contained</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_82" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('56.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('56.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_83" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_83" class="passed">hash</dt>
-    <script type="text/javascript">moveProgressBar('58.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given an instance of Hash</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('58.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when given something else than an instance of Hash</span><span class='duration'>0.00013s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_83" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('56.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('57.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00006s</span></dd>
   </dl>
 </div>
 <div id="div_group_84" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_84" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_84" class="passed">:contains</dt>
+    <script type="text/javascript">moveProgressBar('57.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if all values are contained</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('57.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if only some values are contained</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('58.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if none of the values are contained</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_85" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_85" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('58.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('59.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_85" class="passed">hash</dt>
+    <script type="text/javascript">moveProgressBar('58.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given an instance of Hash</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('58.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when given something else than an instance of Hash</span><span class='duration'>0.00009s</span></dd>
   </dl>
 </div>
 <div id="div_group_86" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_86" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('59.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('59.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_86" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_87" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_87" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('60.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('60.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_87" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('58.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('59.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_88" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_88" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('60.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('60.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('61.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_88" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('59.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('59.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_89" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_89" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('61.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('61.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('62.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_89" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('60.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('60.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_90" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_90" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('62.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('62.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_90" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('60.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('61.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('61.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_91" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_91" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('63.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('63.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('63.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_91" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('61.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('62.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00006s</span></dd>
+    <script type="text/javascript">moveProgressBar('62.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_92" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_92" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('64.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('64.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_92" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('62.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('63.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_93" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_93" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('64.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('65.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00006s</span></dd>
+  <dt id="example_group_93" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('63.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('63.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('64.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_94" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_94" class="passed">:contains</dt>
-    <script type="text/javascript">moveProgressBar('65.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if all values are contained</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('65.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if only some values are contained</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('66.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if none of the values are contained</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_94" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('64.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('64.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_95" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_95" class="passed">:has_keys</dt>
-    <script type="text/javascript">moveProgressBar('66.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if all keys are contained in the hash</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('66.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if not all keys are given in the hash</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('66.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if no keys are contained in the hash</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_95" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('64.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00006s</span></dd>
+    <script type="text/javascript">moveProgressBar('65.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00006s</span></dd>
   </dl>
 </div>
 <div id="div_group_96" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_96" class="passed">boolean</dt>
-    <script type="text/javascript">moveProgressBar('67.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a boolean</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('67.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when not given a boolean</span><span class='duration'>0.00009s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_96" class="passed">:contains</dt>
+    <script type="text/javascript">moveProgressBar('65.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if all values are contained</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('65.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if only some values are contained</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('66.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if none of the values are contained</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_97" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_97" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_97" class="passed">:has_keys</dt>
+    <script type="text/javascript">moveProgressBar('66.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if all keys are contained in the hash</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('66.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if not all keys are given in the hash</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('67.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if no keys are contained in the hash</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_98" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_98" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('67.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('68.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_98" class="passed">boolean</dt>
+    <script type="text/javascript">moveProgressBar('67.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a boolean</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('67.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when not given a boolean</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_99" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_99" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('68.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('68.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00009s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_99" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_100" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_100" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('69.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('69.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_100" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('68.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('68.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_101" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_101" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('69.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('70.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('70.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_101" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('68.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('69.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_102" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_102" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('70.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('71.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('71.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_102" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('69.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('69.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_103" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_103" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('71.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('72.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_103" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('70.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00015s</span></dd>
+    <script type="text/javascript">moveProgressBar('70.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00015s</span></dd>
+    <script type="text/javascript">moveProgressBar('70.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_104" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_104" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('72.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('72.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('73.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_104" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('70.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('71.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('71.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_105" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_105" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('73.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('73.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_105" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('71.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('72.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_106" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_106" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('73.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('74.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00006s</span></dd>
+  <dt id="example_group_106" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('72.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('72.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.01165s</span></dd>
+    <script type="text/javascript">moveProgressBar('73.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00030s</span></dd>
   </dl>
 </div>
 <div id="div_group_107" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_107" class="passed">ssid</dt>
-    <script type="text/javascript">moveProgressBar('74.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid SSID</span><span class='duration'>0.00015s</span></dd>
-    <script type="text/javascript">moveProgressBar('74.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when not given a SSID</span><span class='duration'>0.00011s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_107" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('73.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('73.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00008s</span></dd>
   </dl>
 </div>
 <div id="div_group_108" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_108" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_108" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('74.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('74.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
 <div id="div_group_109" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_109" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('75.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('75.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00011s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_109" class="passed">ssid</dt>
+    <script type="text/javascript">moveProgressBar('74.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid SSID</span><span class='duration'>0.00016s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when not given a SSID</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_110" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_110" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('75.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('76.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_110" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_111" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_111" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('76.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('76.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_111" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('75.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_112" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_112" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('77.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('77.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('77.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_112" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('76.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_113" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_113" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('78.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('78.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('78.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_113" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('76.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_114" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_114" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('79.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('79.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_114" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('77.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00017s</span></dd>
+    <script type="text/javascript">moveProgressBar('77.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('77.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_115" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_115" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('79.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('80.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('80.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_115" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('78.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('78.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('78.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_116" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_116" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('80.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('80.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  <dt id="example_group_116" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('79.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('79.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_117" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_117" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('81.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('81.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00008s</span></dd>
+  <dt id="example_group_117" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('79.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('80.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('80.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_118" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_118" class="passed">box</dt>
-    <script type="text/javascript">moveProgressBar('81.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid box</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('82.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when not given a box</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('82.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails with an invalid top longitude</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('82.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails with an invalid top latitude</span><span class='duration'>0.00012s</span></dd>
-    <script type="text/javascript">moveProgressBar('83.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails with an invalid down longitude</span><span class='duration'>0.00010s</span></dd>
-    <script type="text/javascript">moveProgressBar('83.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails with an invalid down latitude</span><span class='duration'>0.00009s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_118" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('80.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('81.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00008s</span></dd>
   </dl>
 </div>
 <div id="div_group_119" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_119" class="passed">options</dt>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_119" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('81.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('81.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00008s</span></dd>
   </dl>
 </div>
 <div id="div_group_120" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_120" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('83.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('84.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_120" class="passed">box</dt>
+    <script type="text/javascript">moveProgressBar('82.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid box</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('82.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when not given a box</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('82.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails with an invalid top longitude</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('82.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails with an invalid top latitude</span><span class='duration'>0.00011s</span></dd>
+    <script type="text/javascript">moveProgressBar('83.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails with an invalid down longitude</span><span class='duration'>0.00010s</span></dd>
+    <script type="text/javascript">moveProgressBar('83.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails with an invalid down latitude</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_121" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_121" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('84.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('84.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_121" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_122" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_122" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('85.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('85.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_122" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('83.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('84.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_123" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_123" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('85.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00017s</span></dd>
-    <script type="text/javascript">moveProgressBar('86.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00011s</span></dd>
-    <script type="text/javascript">moveProgressBar('86.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
+  <dt id="example_group_123" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('84.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('84.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_124" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_124" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('86.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.01130s</span></dd>
-    <script type="text/javascript">moveProgressBar('86.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('87.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00033s</span></dd>
+  <dt id="example_group_124" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('85.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('85.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_125" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_125" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('87.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('87.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00015s</span></dd>
+  <dt id="example_group_125" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('85.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('86.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('86.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_126" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_126" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('88.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('88.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00016s</span></dd>
-    <script type="text/javascript">moveProgressBar('88.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_126" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('86.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('87.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('87.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_127" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_127" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('89.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('89.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00009s</span></dd>
+  <dt id="example_group_127" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('87.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('88.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00012s</span></dd>
   </dl>
 </div>
 <div id="div_group_128" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_128" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('89.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('90.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00008s</span></dd>
+  <dt id="example_group_128" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('88.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('88.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('88.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_129" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_129" class="passed">:at_least</dt>
-    <script type="text/javascript">moveProgressBar('90.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if the box is bigger than the one given with the at_least option</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('90.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if the box is equal than the one given with the at_least option</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('91.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the box is smaller than the one given with the at_least option</span><span class='duration'>0.00016s</span></dd>
+  <dt id="example_group_129" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('89.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('89.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00008s</span></dd>
   </dl>
 </div>
 <div id="div_group_130" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_130" class="passed">at_most</dt>
+  <dt id="example_group_130" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('89.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00008s</span></dd>
+    <script type="text/javascript">moveProgressBar('90.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00008s</span></dd>
+  </dl>
+</div>
+<div id="div_group_131" class="example_group passed">
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_131" class="passed">:at_least</dt>
+    <script type="text/javascript">moveProgressBar('90.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if the box is bigger than the one given with the at_least option</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('90.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if the box is equal than the one given with the at_least option</span><span class='duration'>0.00009s</span></dd>
+    <script type="text/javascript">moveProgressBar('91.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the box is smaller than the one given with the at_least option</span><span class='duration'>0.00012s</span></dd>
+  </dl>
+</div>
+<div id="div_group_132" class="example_group passed">
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_132" class="passed">at_most</dt>
     <script type="text/javascript">moveProgressBar('91.4');</script>
     <dd class="example passed"><span class="passed_spec_name">succeeds if the box is smaller than the one given with the at_most option</span><span class='duration'>0.00009s</span></dd>
     <script type="text/javascript">moveProgressBar('91.7');</script>
     <dd class="example passed"><span class="passed_spec_name">succeeds if the box is equal than the one given with the at_most option</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('92.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the box is bigger than the one given with the at_most option</span><span class='duration'>0.00012s</span></dd>
-  </dl>
-</div>
-<div id="div_group_131" class="example_group passed">
-  <dl style="margin-left: 15px;">
-  <dt id="example_group_131" class="passed">email</dt>
-    <script type="text/javascript">moveProgressBar('92.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid email</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('92.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when not given a email</span><span class='duration'>0.00011s</span></dd>
-  </dl>
-</div>
-<div id="div_group_132" class="example_group passed">
-  <dl style="margin-left: 30px;">
-  <dt id="example_group_132" class="passed">options</dt>
+    <script type="text/javascript">moveProgressBar('92.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the box is bigger than the one given with the at_most option</span><span class='duration'>0.00014s</span></dd>
   </dl>
 </div>
 <div id="div_group_133" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_133" class="passed">:rename</dt>
-    <script type="text/javascript">moveProgressBar('93.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00009s</span></dd>
-    <script type="text/javascript">moveProgressBar('93.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00011s</span></dd>
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_133" class="passed">email</dt>
+    <script type="text/javascript">moveProgressBar('92.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when given a valid email</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('92.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when not given a email</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_134" class="example_group passed">
-  <dl style="margin-left: 45px;">
-  <dt id="example_group_134" class="passed">:dependency</dt>
-    <script type="text/javascript">moveProgressBar('93.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('93.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00011s</span></dd>
+  <dl style="margin-left: 30px;">
+  <dt id="example_group_134" class="passed">options</dt>
   </dl>
 </div>
 <div id="div_group_135" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_135" class="passed">:dependencies</dt>
-    <script type="text/javascript">moveProgressBar('94.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00008s</span></dd>
-    <script type="text/javascript">moveProgressBar('94.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00013s</span></dd>
+  <dt id="example_group_135" class="passed">:rename</dt>
+    <script type="text/javascript">moveProgressBar('93.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly renames a key when the value is valid</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('93.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">correctly doesn't rename a key when the value is invalid</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_136" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_136" class="passed">:required</dt>
-    <script type="text/javascript">moveProgressBar('94.9');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00019s</span></dd>
-    <script type="text/javascript">moveProgressBar('95.2');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00013s</span></dd>
-    <script type="text/javascript">moveProgressBar('95.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00017s</span></dd>
+  <dt id="example_group_136" class="passed">:dependency</dt>
+    <script type="text/javascript">moveProgressBar('93.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a dependency is given as a key and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('94.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a dependency is not respected</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_137" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_137" class="passed">:in</dt>
-    <script type="text/javascript">moveProgressBar('95.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('96.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('96.5');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00012s</span></dd>
+  <dt id="example_group_137" class="passed">:dependencies</dt>
+    <script type="text/javascript">moveProgressBar('94.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when dependencies are given as an array and respected</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('94.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when one of the dependencies is not respected</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_138" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_138" class="passed">:equals</dt>
-    <script type="text/javascript">moveProgressBar('96.8');</script>
-    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('97.1');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00014s</span></dd>
+  <dt id="example_group_138" class="passed">:required</dt>
+    <script type="text/javascript">moveProgressBar('94.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when a not required key is not given, but filters nothing</span><span class='duration'>0.00014s</span></dd>
+    <script type="text/javascript">moveProgressBar('95.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when a key has a required option to false, and is not given, but filters nothing</span><span class='duration'>0.00012s</span></dd>
+    <script type="text/javascript">moveProgressBar('95.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when a required key is not given</span><span class='duration'>0.00010s</span></dd>
   </dl>
 </div>
 <div id="div_group_139" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_139" class="passed">:equals_key</dt>
-    <script type="text/javascript">moveProgressBar('97.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
-    <script type="text/javascript">moveProgressBar('97.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00014s</span></dd>
-    <script type="text/javascript">moveProgressBar('98.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00010s</span></dd>
+  <dt id="example_group_139" class="passed">:in</dt>
+    <script type="text/javascript">moveProgressBar('95.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is effectively in the possible values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('96.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds if there are no values</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('96.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not in the possible values</span><span class='duration'>0.00013s</span></dd>
   </dl>
 </div>
 <div id="div_group_140" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_140" class="passed">:extract</dt>
-    <script type="text/javascript">moveProgressBar('98.4');</script>
-    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('98.7');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00008s</span></dd>
+  <dt id="example_group_140" class="passed">:equals</dt>
+    <script type="text/javascript">moveProgressBar('96.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">succeeds when the value is equal to the given value</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('97.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails if the value is not equal to the given value</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_141" class="example_group passed">
   <dl style="margin-left: 45px;">
-  <dt id="example_group_141" class="passed">:cast</dt>
-    <script type="text/javascript">moveProgressBar('99.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00006s</span></dd>
-    <script type="text/javascript">moveProgressBar('99.3');</script>
-    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00006s</span></dd>
+  <dt id="example_group_141" class="passed">:equals_key</dt>
+    <script type="text/javascript">moveProgressBar('97.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">suceeds when the key is present and equals to the other key</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('97.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key is present, but not equals to the other key</span><span class='duration'>0.00013s</span></dd>
+    <script type="text/javascript">moveProgressBar('98.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">fails when the key to compare the validated key with is not in the hash</span><span class='duration'>0.00011s</span></dd>
   </dl>
 </div>
 <div id="div_group_142" class="example_group passed">
-  <dl style="margin-left: 0px;">
-  <dt id="example_group_142" class="passed">Kharon</dt>
-    <script type="text/javascript">moveProgressBar('99.6');</script>
-    <dd class="example passed"><span class="passed_spec_name">Can not use exceptions</span><span class='duration'>0.00077s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">Can use exceptions</span><span class='duration'>0.00006s</span></dd>
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_142" class="passed">:extract</dt>
+    <script type="text/javascript">moveProgressBar('98.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">etracts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('98.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't extract the data when given at false</span><span class='duration'>0.00007s</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.10032 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "315 examples, 0 failures";</script>
+<div id="div_group_143" class="example_group passed">
+  <dl style="margin-left: 45px;">
+  <dt id="example_group_143" class="passed">:cast</dt>
+    <script type="text/javascript">moveProgressBar('99.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">casts the data when given at true</span><span class='duration'>0.00007s</span></dd>
+    <script type="text/javascript">moveProgressBar('99.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">doesn't cast the data when given at false</span><span class='duration'>0.00007s</span></dd>
+  </dl>
+</div>
+<div id="div_group_144" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_144" class="passed">Kharon</dt>
+    <script type="text/javascript">moveProgressBar('99.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">Can not use exceptions</span><span class='duration'>0.00072s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Can use exceptions</span><span class='duration'>0.00011s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.10280 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "317 examples, 0 failures";</script>
 </div>
 </div>
 </body>

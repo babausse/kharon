@@ -2,7 +2,7 @@
 # @author Vincent Courtois <courtois.vincent@outlook.com>
 module Kharon
 
-  [:Validator, :Version, :Errors, :Handlers, :Helpers].each { |classname| autoload(classname, "kharon/#{classname.downcase}") }
+  [:Validator, :Version, :Errors, :Handlers, :Helpers, :Validate].each { |classname| autoload(classname, "kharon/#{classname.downcase}") }
 
   @@use_exceptions = true
 
