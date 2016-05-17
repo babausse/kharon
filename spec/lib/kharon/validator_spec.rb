@@ -91,6 +91,24 @@ shared_examples "options" do |process|
     end
   end
 
+  context ":equals_key" do
+    it "suceeds when the key is present and equals to the other key" do
+      validator = Kharon::Validator.new(comparable_datas)
+      validator.send(process, comparable_datas.keys.first, :equals_key => comparable_datas.keys[1])
+      expect(validator.filtered).to eq(comparable_filtered)
+    end
+
+    it "fails when the key is present, but not equals to the other key" do
+      validator = Kharon::Validator.new(comparable_invalid)
+      expect(->{validator.send(process, comparable_invalid.keys.first, :equals_key => comparable_invalid.keys[1])}).to raise_error(Kharon::Errors::Validation)
+    end
+
+    it "fails when the key to compare the validated key with is not in the hash" do
+      validator = Kharon::Validator.new(comparable_invalid)
+      expect(->{validator.send(process, comparable_invalid.keys.first, :equals_key => nil)}).to raise_error(Kharon::Errors::Validation)
+    end
+  end
+
   context ":extract" do
     it "etracts the data when given at true" do
       validator = Kharon::Validator.new(valid_datas)
@@ -218,9 +236,12 @@ end
 
 describe "Validator" do
   context "integer" do
-    let(:valid_datas)    { {is_an_integer: "1000"} }
-    let(:valid_filtered) { {is_an_integer: 1000} }
-    let(:invalid_datas)  { {is_not_an_integer: "something else"} }
+    let(:valid_datas)         { {is_an_integer: "1000"} }
+    let(:valid_filtered)      { {is_an_integer: 1000} }
+    let(:invalid_datas)       { {is_not_an_integer: "something else"} }
+    let(:comparable_datas)    { {first: "1000", second: "1000"} }
+    let(:comparable_invalid)  { {first: "1000", second: "2000"} }
+    let(:comparable_filtered) { {first: 1000} }
 
     it "succeeds when given an integer" do
       validator = Kharon::Validator.new(valid_datas)
@@ -245,9 +266,12 @@ describe "Validator" do
   end
 
   context "numeric" do
-    let(:valid_datas)    { {is_a_double: "1000.5"} }
-    let(:valid_filtered) { {is_a_double: 1000.5} }
-    let(:invalid_datas)  { {is_not_a_numeric: "something else"} }
+    let(:valid_datas)         { {is_a_double: "1000.5"} }
+    let(:valid_filtered)      { {is_a_double: 1000.5} }
+    let(:invalid_datas)       { {is_not_a_numeric: "something else"} }
+    let(:comparable_datas)    { {first: "1000.5", second: "1000.5"} }
+    let(:comparable_invalid)  { {first: "1000.5", second: "2000.5"} }
+    let(:comparable_filtered) { {first: 1000.5} }
 
     it "succeeds when given an integer" do
       validator = Kharon::Validator.new({is_an_integer: "1000"})
@@ -327,9 +351,12 @@ describe "Validator" do
   end
 
   context "text" do
-    let(:valid_datas)    { {is_a_string: "something"} }
-    let(:valid_filtered) { {is_a_string: "something"} }
-    let(:invalid_datas)  { {is_not_a_string: 1000} }
+    let(:valid_datas)         { {is_a_string: "something"} }
+    let(:valid_filtered)      { {is_a_string: "something"} }
+    let(:comparable_datas)    { {first: "something", second: "something"} }
+    let(:comparable_invalid)  { {first: "something", second: "something else"} }
+    let(:comparable_filtered) { {first: "something"} }
+    let(:invalid_datas)       { {is_not_a_string: 1000} }
 
     include_examples "type checker", "String", :text
 
@@ -352,10 +379,13 @@ describe "Validator" do
   end
 
   context "datetime" do
-    let(:date_time)      { DateTime.new }
-    let(:valid_datas)    { {is_a_datetime: date_time.to_s} }
-    let(:valid_filtered) { {is_a_datetime: date_time} }
-    let(:invalid_datas)  { {is_not_a_datetime: "something else"} }
+    let(:date_time)           { DateTime.new }
+    let(:valid_datas)         { {is_a_datetime: date_time.to_s} }
+    let(:valid_filtered)      { {is_a_datetime: date_time} }
+    let(:comparable_datas)    { {first: date_time.to_s, second: date_time.to_s} }
+    let(:comparable_invalid)  { {first: date_time.to_s, second: (date_time+1).to_s} }
+    let(:comparable_filtered) { {first: date_time} }
+    let(:invalid_datas)       { {is_not_a_datetime: "something else"} }
 
     it "succeeds when given a valid datetime as a string" do
       validator = Kharon::Validator.new(valid_datas)
@@ -380,10 +410,13 @@ describe "Validator" do
   end
 
   context "date" do
-    let(:date)           { Date.new }
-    let(:valid_datas)    { {is_a_date: date.to_s} }
-    let(:valid_filtered) { {is_a_date: date} }
-    let(:invalid_datas)  { {is_not_a_date: "something else"} }
+    let(:date)                { Date.new }
+    let(:valid_datas)         { {is_a_date: date.to_s} }
+    let(:valid_filtered)      { {is_a_date: date} }
+    let(:comparable_datas)    { {first: date.to_s, second: date.to_s} }
+    let(:comparable_invalid)  { {first: date.to_s, second: (date+1).to_s} }
+    let(:comparable_filtered) { {first: date} }
+    let(:invalid_datas)       { {is_not_a_date: "something else"} }
 
     it "succeeds when given a valid date as a string" do
       validator = Kharon::Validator.new(valid_datas)
@@ -408,9 +441,12 @@ describe "Validator" do
   end
 
   context "array" do
-    let(:valid_datas)    { {is_an_array: ["val1", "val2"]} }
-    let(:valid_filtered) { {is_an_array: ["val1", "val2"]} }
-    let(:invalid_datas)  { {is_not_an_array: 1000} }
+    let(:valid_datas)         { {is_an_array: ["val1", "val2"]} }
+    let(:valid_filtered)      { {is_an_array: ["val1", "val2"]} }
+    let(:comparable_datas)    { {first: ["val1", "val2"], second: ["val1", "val2"]} }
+    let(:comparable_invalid)  { {first: ["val1", "val2"], second: ["val1", "val3"]} }
+    let(:comparable_filtered) { {first: ["val1", "val2"]} }
+    let(:invalid_datas)       { {is_not_an_array: 1000} }
 
     include_examples "type checker", "Array", :array
 
@@ -421,9 +457,12 @@ describe "Validator" do
   end
 
   context "hash" do
-    let(:valid_datas)    { {is_a_hash: {key1: "val1", key2: "val2"}} }
-    let(:valid_filtered) { {is_a_hash: {key1: "val1", key2: "val2"}} }
-    let(:invalid_datas)  { {is_not_a_hash: 1000} }
+    let(:valid_datas)         { {is_a_hash: {key1: "val1", key2: "val2"}} }
+    let(:valid_filtered)      { {is_a_hash: {key1: "val1", key2: "val2"}} }
+    let(:comparable_datas)    { {first: {key1: "val1", key2: "val2"}, second: {key1: "val1", key2: "val2"}} }
+    let(:comparable_invalid)  { {first: {key1: "val1", key2: "val2"}, second: {key1: "val1", key2: "val3"}} }
+    let(:comparable_filtered) { {first: {key1: "val1", key2: "val2"}} }
+    let(:invalid_datas)       { {is_not_a_hash: 1000} }
 
     include_examples "type checker", "Hash", :hash
 
@@ -452,9 +491,12 @@ describe "Validator" do
   end
 
   context "boolean" do
-    let(:valid_datas)    { {is_a_boolean: "true"} }
-    let(:valid_filtered) { {is_a_boolean: true} }
-    let(:invalid_datas)  { {is_not_a_boolean: "anything else"} }
+    let(:valid_datas)         { {is_a_boolean: "true"} }
+    let(:valid_filtered)      { {is_a_boolean: true} }
+    let(:comparable_datas)    { {first: "true", second: "true"} }
+    let(:comparable_invalid)  { {first: "true", second: "false"} }
+    let(:comparable_filtered) { {first: true} }
+    let(:invalid_datas)       { {is_not_a_boolean: "anything else"} }
 
     it "succeeds when given a boolean" do
       validator = Kharon::Validator.new(valid_datas)
@@ -473,10 +515,13 @@ describe "Validator" do
   end
 
   context "ssid" do
-    let(:valid_ssid)     { BSON::ObjectId.new }
-    let(:valid_datas)    { {is_a_ssid: valid_ssid.to_s} }
-    let(:valid_filtered) { {is_a_ssid: valid_ssid} }
-    let(:invalid_datas)  { {is_not_a_ssid: "anything else"} }
+    let(:valid_ssid)          { BSON::ObjectId.new }
+    let(:valid_datas)         { {is_a_ssid: valid_ssid.to_s} }
+    let(:valid_filtered)      { {is_a_ssid: valid_ssid} }
+    let(:comparable_datas)    { {first: valid_ssid.to_s, second: valid_ssid.to_s} }
+    let(:comparable_invalid)  { {first: valid_ssid.to_s, second: BSON::ObjectId.new.to_s} }
+    let(:comparable_filtered) { {first: valid_ssid} }
+    let(:invalid_datas)       { {is_not_a_ssid: "anything else"} }
 
     it "succeeds when given a valid SSID" do
       validator = Kharon::Validator.new(valid_datas)
@@ -495,9 +540,12 @@ describe "Validator" do
   end
 
   context "box" do
-    let(:valid_datas)    { {is_a_box: "-2,-2.0,100,100.0"} }
-    let(:valid_filtered) { {is_a_box: [[-2, -2], [100, 100]]} }
-    let(:invalid_datas)  { {is_not_a_box: "anything else"} }
+    let(:valid_datas)         { {is_a_box: "-2,-2.0,100,100.0"} }
+    let(:valid_filtered)      { {is_a_box: [[-2, -2], [100, 100]]} }
+    let(:comparable_datas)    { {first: "-2,-2.0,100,100.0", second: "-2,-2.0,100,100.0"} }
+    let(:comparable_invalid)  { {first: "-2,-2.0,100,100.0", second: "-3,-2.0,100,100.0"} }
+    let(:comparable_filtered) { {first: [[-2, -2], [100, 100]]} }
+    let(:invalid_datas)       { {is_not_a_box: "anything else"} }
 
     before do
       @validator = Kharon::Validator.new(valid_datas)
@@ -569,9 +617,12 @@ describe "Validator" do
   end
 
   context "email" do
-    let(:valid_datas)    { {is_an_email: "vincent.courtois@mycar-innovations.com"} }
-    let(:valid_filtered) { valid_datas }
-    let(:invalid_datas)  { {is_not_an_email: "anything else"} }
+    let(:valid_datas)         { {is_an_email: "vincent.courtois@mycar-innovations.com"} }
+    let(:valid_filtered)      { valid_datas }
+    let(:comparable_datas)    { {first: "vincent.courtois@mycar-innovations.com", second: "vincent.courtois@mycar-innovations.com"} }
+    let(:comparable_invalid)  { {first: "vincent.courtois@mycar-innovations.com", second: "vincent.courtois@safety-line.fr"} }
+    let(:comparable_filtered) { {first: "vincent.courtois@mycar-innovations.com"} }
+    let(:invalid_datas)       { {is_not_an_email: "anything else"} }
 
     it "succeeds when given a valid email" do
       validator = Kharon::Validator.new(valid_datas)

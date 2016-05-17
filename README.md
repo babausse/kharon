@@ -170,7 +170,11 @@ This option is used to give an array of possible values for the given key. If th
 
 #### :equals
 
-For the value of a given key in the hash to be equal to the given value. It can be used with all methods.
+this method compares the value of the given key in the hash to be equal to the given value. It can be used with all methods.
+
+#### :equals_key
+
+this method compares the value of the given key in the hash to be equal to the value associated with the compared key in the same hash. It can be used with all methods.
 
 #### :min
 

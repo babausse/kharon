@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    kharon (1.1.0)
+    kharon (1.0.0)
       bson (~> 2.2, >= 2.2.2)
 
 GEM
@@ -39,3 +39,6 @@ DEPENDENCIES
   redcarpet (= 3.3.1)
   rspec (~> 3.0, >= 3.0.0)
   yard (~> 0.8)
+
+BUNDLED WITH
+   1.12.3

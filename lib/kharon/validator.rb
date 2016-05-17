@@ -296,6 +296,14 @@ module Kharon
       raise_error(type: "equals", key: key, supposed: value, found: datas[key]) unless datas[key] == value
     end
 
+    # Checks if the value associated with the given key is equal to the given key.
+    # @param [Object] key the key associated with the value to check.
+    # @param [Object] value the key to compare the currently validated key with.
+    # @raise [ArgumentError] if the initial value is not equal to the given value.
+    def equals_key?(key, value)
+      raise_error(type: "equals", key: key, supposed: datas[value], found: datas[key]) unless datas[key] == datas[value]
+    end
+
     # Checks if the value associated with the given key has the given required keys.
     # @param [Object] key the key associated with the value to check.
     # @param [Array]  required_keys the keys that the initial Hash typed value should contain.
@@ -352,6 +360,8 @@ module Kharon
             in_array?(key, options[:in])
           elsif(options.has_key?(:equals))
             equals_to?(key, options[:equals])
+          elsif(options.has_key?(:equals_key))
+            equals_key?(key, options[:equals_key])
           end
           options.has_key?(:rename) ? (@filtered[options[:rename]] = value) : (@filtered[key] = value)
         end
