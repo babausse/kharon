@@ -234,7 +234,16 @@ The value of this option must be passed as a box. When given, this option indica
 
 In Kharon, errors are formatted in a particular way. Each error contains a hash (or associative array) describing its type, and giving special caracteristics if necessary.
 
-#### Type error
+#### standard error
+
+This error is the one raised when an error occurs that has nothing to deal with the validation itself. It's mainly raised when a ruby errors occurs. It's formatted as followed :
+
+- type: always has the value "standard"
+- exception: the type of the exception
+- message: the formatted message for the exception
+- backtrace: the whole backtrace for the exception
+
+#### type error
 
 The most common error. It's raised when a type is expected for a key, and the given type for this key is different. It's formatted as followed :
 

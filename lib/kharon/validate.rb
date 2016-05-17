@@ -7,9 +7,15 @@ module Kharon
     # @param  [Proc] block the instructions to apply on the validator.
     # @return [Hash] the validated and filtered datas.
     def validate(datas, &block)
-      validator = Kharon::Validator.new(datas)
-      validator.instance_eval(&block)
-      return validator.filtered
+      begin
+        validator = Kharon::Validator.new(datas)
+        validator.instance_eval(&block)
+        return validator.filtered
+      rescue Kharon::Errors::Validation => exception
+        raise exception
+      rescue Exception => exception
+        raise Kharon::Errors::Validation.new({type: "standard", exception: exception.class.to_s, backtrace: exception.backtrace, message: exception.message})
+      end
     end
   end
 end
