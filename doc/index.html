@@ -150,9 +150,11 @@
 
 <p>Now your validator knows which hash it has to validate, now you can do :</p>
 
-<pre class="code ruby"><code class="ruby"><span class='comment'># Sees if the &quot;required_integer_key&quot; key is present, and an integer
-</span><span class='id identifier rubyid_validator'>validator</span><span class='period'>.</span><span class='id identifier rubyid_integer'>integer</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>required_integer_key</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span><span class='rparen'>)</span>
+<pre class="code ruby"><code class="ruby"><span class='comment'># Sees if the :required_integer_key key is present, and an integer
+</span><span class='id identifier rubyid_validator'>validator</span><span class='period'>.</span><span class='id identifier rubyid_integer'>integer</span><span class='lparen'>(</span><span class='symbol'>:required_integer_key</span><span class='comma'>,</span> <span class='label'>required:</span> <span class='kw'>true</span><span class='rparen'>)</span>
 </code></pre>
+
+<p>Note: all keys are converted in symbols, and you must use symbols in all method calls on a validator.</p>
 
 <p>All the functions are listed in the full documentation below.</p>
 
@@ -287,7 +289,16 @@ The value of this option must be passed as a box. When given, this option indica
 
 In Kharon, errors are formatted in a particular way. Each error contains a hash (or associative array) describing its type, and giving special caracteristics if necessary.
 
-#### Type error
+#### standard error
+
+This error is the one raised when an error occurs that has nothing to deal with the validation itself. It's mainly raised when a ruby errors occurs. It's formatted as followed :
+
+- type: always has the value &quot;standard&quot;
+- exception: the type of the exception
+- message: the formatted message for the exception
+- backtrace: the whole backtrace for the exception
+
+#### type error
 
 The most common error. It's raised when a type is expected for a key, and the given type for this key is different. It's formatted as followed :
 
@@ -389,7 +400,7 @@ Yes, it works, unit tests results can be found here : {file:doc/results.html res
 </div></div>
 
     <div id="footer">
-  Generated on Tue May 17 11:54:24 2016 by
+  Generated on Thu Jun  2 16:20:54 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>

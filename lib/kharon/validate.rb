@@ -14,7 +14,7 @@ module Kharon
       rescue Kharon::Errors::Validation => exception
         raise exception
       rescue Exception => exception
-        raise Kharon::Errors::Validation.new({type: "standard", exception: exception.class.to_s, backtrace: exception.backtrace, message: exception.message})
+        raise Kharon::Errors::Validation.new({type: "standard", exception: exception.class.to_s, message: exception.message, backtrace: exception.backtrace})
       end
     end
   end

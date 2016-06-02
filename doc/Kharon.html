@@ -80,7 +80,7 @@
   
     <dt class="r1 last">Defined in:</dt>
     <dd class="r1 last">lib/kharon.rb<span class="defines">,<br />
-  lib/kharon/errors.rb,<br /> lib/kharon/version.rb,<br /> lib/kharon/validate.rb,<br /> lib/kharon/handlers.rb,<br /> lib/kharon/validator.rb,<br /> lib/kharon/errors/validation.rb,<br /> lib/kharon/handlers/messages.rb,<br /> lib/kharon/handlers/exceptions.rb</span>
+  lib/kharon/errors.rb,<br /> lib/kharon/version.rb,<br /> lib/kharon/validate.rb,<br /> lib/kharon/handlers.rb,<br /> lib/kharon/processor.rb,<br /> lib/kharon/validator.rb,<br /> lib/kharon/processors.rb,<br /> lib/kharon/handlers/messages.rb,<br /> lib/kharon/errors/validation.rb,<br /> lib/kharon/handlers/exceptions.rb,<br /> lib/kharon/processors/box_processor.rb,<br /> lib/kharon/processors/ssid_processor.rb,<br /> lib/kharon/processors/date_processor.rb,<br /> lib/kharon/processors/text_processor.rb,<br /> lib/kharon/processors/hash_processor.rb,<br /> lib/kharon/processors/email_processor.rb,<br /> lib/kharon/processors/array_processor.rb,<br /> lib/kharon/processors/boolean_processor.rb,<br /> lib/kharon/processors/integer_processor.rb,<br /> lib/kharon/processors/numeric_processor.rb,<br /> lib/kharon/processors/datetime_processor.rb</span>
 </dd>
   
 </dl>
@@ -117,11 +117,11 @@
 <p class="children">
   
     
-      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Kharon/Errors.html" title="Kharon::Errors (module)">Errors</a></span>, <span class='object_link'><a href="Kharon/Handlers.html" title="Kharon::Handlers (module)">Handlers</a></span>, <span class='object_link'><a href="Kharon/Validate.html" title="Kharon::Validate (module)">Validate</a></span>
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Kharon/Errors.html" title="Kharon::Errors (module)">Errors</a></span>, <span class='object_link'><a href="Kharon/Handlers.html" title="Kharon::Handlers (module)">Handlers</a></span>, <span class='object_link'><a href="Kharon/Processors.html" title="Kharon::Processors (module)">Processors</a></span>, <span class='object_link'><a href="Kharon/Validate.html" title="Kharon::Validate (module)">Validate</a></span>
     
   
     
-      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Kharon/Validator.html" title="Kharon::Validator (class)">Validator</a></span>
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Kharon/Processor.html" title="Kharon::Processor (class)">Processor</a></span>, <span class='object_link'><a href="Kharon/Validator.html" title="Kharon::Validator (class)">Validator</a></span>
     
   
 </p>
@@ -144,12 +144,17 @@
 
 </div>
         </dt>
-        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.0.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>1.1.0</span><span class='tstring_end'>&quot;</span></span></pre></dd>
       
         <dt id="use_exceptions-classvariable" class="">@@use_exceptions =
           
         </dt>
         <dd><pre class="code"><span class='kw'>true</span></pre></dd>
+      
+        <dt id="processors-classvariable" class="">@@processors =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span><span class='rbrace'>}</span></pre></dd>
       
     </dl>
   
@@ -171,6 +176,30 @@
         <li class="public ">
   <span class="summary_signature">
     
+      <a href="#add_processor-class_method" title="add_processor (class method)">+ (Object) <strong>add_processor</strong>(name, classname) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Adds a processor class to the list of processors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
       <a href="#errors_handler-class_method" title="errors_handler (class method)">+ (Object) <strong>errors_handler</strong> </a>
     
 
@@ -187,6 +216,78 @@
   
     <span class="summary_desc"><div class='inline'>
 <p>Returns the current error handler, defined by if you use exceptions or not.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#has_processor%3F-class_method" title="has_processor? (class method)">+ (Boolean) <strong>has_processor?</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Checks if a processor currently exists in the system.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#processors-class_method" title="processors (class method)">+ (Hash) <strong>processors</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Getter for the list of processors.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remove_processor-class_method" title="remove_processor (class method)">+ (Object) <strong>remove_processor</strong>(name) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Removes a processor from the list of available processors.</p>
 </div></span>
   
 </li>
@@ -227,7 +328,85 @@ stores error messages.</p>
 
     
       <div class="method_details first">
-  <h3 class="signature first" id="errors_handler-class_method">
+  <h3 class="signature first" id="add_processor-class_method">
+  
+    + (<tt>Object</tt>) <strong>add_processor</strong>(name, classname) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Adds a processor class to the list of processors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the stored processor to retrieve it after. It will be the
+method you call to process a data with that processor.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>classname</span>
+      
+      
+        <span class='type'>(<tt>Class</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the class object for the processor to be instanciated later.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+24
+25
+26</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kharon.rb', line 24</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_add_processor'>add_processor</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='comma'>,</span> <span class='id identifier rubyid_classname'>classname</span><span class='rparen'>)</span>
+  <span class='cvar'>@@processors</span><span class='lbracket'>[</span><span class='id identifier rubyid_name'>name</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_classname'>classname</span> <span class='kw'>if</span> <span class='id identifier rubyid_classname'>classname</span><span class='period'>.</span><span class='id identifier rubyid_ancestors'>ancestors</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Processor</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="errors_handler-class_method">
   
     + (<tt>Object</tt>) <strong>errors_handler</strong> 
   
@@ -280,6 +459,205 @@ instance of Kharon::Handlers::Messages else.</p>
 
 <span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_errors_handler'>errors_handler</span>
   <span class='cvar'>@@use_exceptions</span> <span class='op'>?</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Handlers</span><span class='op'>::</span><span class='const'>Exceptions</span><span class='period'>.</span><span class='id identifier rubyid_instance'>instance</span> <span class='op'>:</span> <span class='const'>Kharon</span><span class='op'>::</span><span class='const'>Handlers</span><span class='op'>::</span><span class='const'>Messages</span><span class='period'>.</span><span class='id identifier rubyid_new'>new</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="has_processor?-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>has_processor?</strong>(name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Checks if a processor currently exists in the system.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name of the processor to check the existence.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>TRUE if the processor exists, FALSE if not.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+43
+44
+45</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kharon.rb', line 43</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_has_processor?'>has_processor?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='cvar'>@@processors</span><span class='period'>.</span><span class='id identifier rubyid_keys'>keys</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="processors-class_method">
+  
+    + (<tt>Hash</tt>) <strong>processors</strong> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Getter for the list of processors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the list of processors currently available.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kharon.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_processors'>processors</span>
+  <span class='cvar'>@@processors</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="remove_processor-class_method">
+  
+    + (<tt>Object</tt>) <strong>remove_processor</strong>(name) 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Removes a processor from the list of available processors.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the name (key) of the processor to delete.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/kharon.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_remove_processor'>remove_processor</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
+  <span class='cvar'>@@processors</span><span class='period'>.</span><span class='id identifier rubyid_delete'>delete</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span> <span class='kw'>if</span> <span class='kw'>self</span><span class='period'>.</span><span class='id identifier rubyid_has_processor?'>has_processor?</span><span class='lparen'>(</span><span class='id identifier rubyid_name'>name</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -355,7 +733,7 @@ stores error messages.</p>
 </div>
 
     <div id="footer">
-  Generated on Tue May 17 11:54:24 2016 by
+  Generated on Thu Jun  2 16:20:55 2016 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.6 (ruby-1.9.3).
 </div>
