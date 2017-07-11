@@ -19,7 +19,7 @@ Gem::Specification.new do |specification|
 
   specification.required_ruby_version = ">= 1.9.3"
 
-  specification.add_runtime_dependency "bson", "~> 2.2", ">= 2.2.2"
+  specification.add_runtime_dependency "bson", ">= 4.2.1"
 
   specification.add_development_dependency "yard", "~> 0.8"
   specification.add_development_dependency "redcarpet", "3.3.1"
