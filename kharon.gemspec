@@ -14,12 +14,12 @@ Gem::Specification.new do |specification|
   specification.email       = "courtois.vincent@outlook.com"
   specification.files       = `git ls-files`.split($/)
   specification.homepage    = "https://rubygems.org/gems/kharon"
-  specification.license     = "Apache License 2"
+  specification.license     = "Apache-2.0"
   specification.test_files  = ["spec/spec_helper.rb", "spec/lib/kharon/validator_spec.rb"]
 
   specification.required_ruby_version = ">= 1.9.3"
 
-  specification.add_runtime_dependency "bson", ">= 4.2.1"
+  specification.add_runtime_dependency "bson", ">= 4.2.1", "< 5.0.0"
 
   specification.add_development_dependency "yard", "~> 0.8"
   specification.add_development_dependency "redcarpet", "3.3.1"
