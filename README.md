@@ -119,7 +119,6 @@ class DummyController < ApplicationController
   end
 end
 ```
-```
 
 This code is strictly equivalent to the one presented above, it uses the block syntax of ruby to give you a nice and fancy way to validate your datas !
 
